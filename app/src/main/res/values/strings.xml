@@ -5,6 +5,14 @@
         Name: %1$s\nAddress: %2$s\nPhone: %3$s\nWebsite: %4$s\nRating: %5$s\n
     </string>
 
+    <string name="place_name">
+        Name: %1$s\n
+    </string>
+
+    <string name="place_rating">
+        Rating: %1$s\n
+    </string>
+
     <string name="title_activity_posts">PostsActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

@@ -1,13 +1,16 @@
 package aschantz.restaurantapp;
 
 import android.content.Context;
+import android.media.Rating;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
@@ -24,16 +27,22 @@ import aschantz.restaurantapp.model.Post;
 public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView tvAuthor;
+        public TextView tvPlace;
         public TextView tvTitle;
         public TextView tvBody;
         public Button btnDelete;
+        public RatingBar userRatingBar;
+        public RatingBar googleRatingBar;
 
         public ViewHolder(View itemView) {
             super(itemView);
             tvAuthor = (TextView) itemView.findViewById(R.id.tvAuthor);
+            tvPlace = (TextView) itemView.findViewById(R.id.tvPlace);
             tvTitle = (TextView) itemView.findViewById(R.id.tvTitle);
             tvBody = (TextView) itemView.findViewById(R.id.tvBody);
             btnDelete = (Button) itemView.findViewById(R.id.btnDelete);
+            userRatingBar = (RatingBar) itemView.findViewById(R.id.userRatingBar);
+            googleRatingBar = (RatingBar) itemView.findViewById(R.id.googleRatingBar);
         }
     }
 
@@ -68,10 +77,15 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
         Post tmpPost = postList.get(position);
+        Log.d("onBind print ", "testing" + tmpPost.getGoogleRating());
+        Log.d("googelRating alone", tmpPost.getGoogleRating());
         viewHolder.tvAuthor.setText(tmpPost.getAuthor());
+        viewHolder.tvPlace.setText(tmpPost.getPlace());
         viewHolder.tvTitle.setText(tmpPost.getTitle());
         viewHolder.tvBody.setText(tmpPost.getBody());
         viewHolder.btnDelete.setVisibility(View.GONE);
+        viewHolder.userRatingBar.setRating(Float.valueOf("0.0"));
+        viewHolder.googleRatingBar.setRating(Float.valueOf(tmpPost.getGoogleRating()));
 
 
         //to make sure you only can delete your own posts
