@@ -6,11 +6,11 @@
     </string>
 
     <string name="place_name">
-        Name: %1$s\n
+        %1$s\n
     </string>
 
     <string name="place_rating">
-        Rating: %1$s\n
+        %1$s\n
     </string>
 
     <string name="title_activity_posts">PostsActivity</string>
@@ -19,5 +19,19 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+
+    <string name="free">under $10</string>
+    <string name="cheap">$10-$20</string>
+    <string name="moderate">$20-$50</string>
+    <string name="expensive">$50+</string>
+
+    <string name="basically_free">Basically Free (under $10)</string>
+    <string name="affordable">Cheap ($10-$20)</string>
+    <string name="techy">Moderate ($20-$50)</string>
+    <string name="paycheck">Paycheck ($50+)</string>
+
+    <string name="veg">Veggie Options?</string>
+    <string name="resAccepted">Reservations Accepted?</string>
 
 </resources>

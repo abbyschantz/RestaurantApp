@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -33,6 +35,9 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
         public Button btnDelete;
         public RatingBar userRatingBar;
         public RatingBar googleRatingBar;
+        public TextView priceRange;
+        public ImageView resAccepted;
+        public ImageView veg;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -43,6 +48,9 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
             btnDelete = (Button) itemView.findViewById(R.id.btnDelete);
             userRatingBar = (RatingBar) itemView.findViewById(R.id.userRatingBar);
             googleRatingBar = (RatingBar) itemView.findViewById(R.id.googleRatingBar);
+            priceRange = (TextView) itemView.findViewById(R.id.priceRange);
+            resAccepted = (ImageView) itemView.findViewById(R.id.resAccepted);
+            veg = (ImageView) itemView.findViewById(R.id.veg);
         }
     }
 
@@ -77,15 +85,39 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
         Post tmpPost = postList.get(position);
-        Log.d("onBind print ", "testing" + tmpPost.getGoogleRating());
-        Log.d("googelRating alone", tmpPost.getGoogleRating());
+//        try {
+//            Log.d("onBind print ", "testing" + tmpPost.getGoogleRating());
+//            Log.d("googelRating alone", tmpPost.getGoogleRating());
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
         viewHolder.tvAuthor.setText(tmpPost.getAuthor());
         viewHolder.tvPlace.setText(tmpPost.getPlace());
         viewHolder.tvTitle.setText(tmpPost.getTitle());
         viewHolder.tvBody.setText(tmpPost.getBody());
+        viewHolder.priceRange.setText(tmpPost.getPriceRange());
         viewHolder.btnDelete.setVisibility(View.GONE);
-        viewHolder.userRatingBar.setRating(Float.valueOf("0.0"));
-        viewHolder.googleRatingBar.setRating(Float.valueOf(tmpPost.getGoogleRating()));
+        try {
+            if (tmpPost.getResAccepted()) {
+                viewHolder.resAccepted.setImageResource(R.drawable.vegtemp);
+            }
+        } catch (Exception e) {
+
+        }
+
+        //viewHolder.userRatingBar.setRating(Float.valueOf("0.0"));
+//        try {
+//            viewHolder.userRatingBar.setRating(Float.valueOf(tmpPost.getUserRating()));
+//        }catch (Exception e) {
+//            viewHolder.userRatingBar.setRating(0f); // 0f means 0 but a float value, it is faster than parsing a string „0.0” to float.
+//        }
+        //viewHolder.googleRatingBar.setRating(Float.valueOf(Float.valueOf("4.7")));
+        try {
+            viewHolder.userRatingBar.setRating(Float.valueOf(tmpPost.getUserRating()));
+            viewHolder.googleRatingBar.setRating(Float.valueOf(tmpPost.getGoogleRating()));
+        }catch (Exception e) {
+            viewHolder.googleRatingBar.setRating(0f); // 0f means 0 but a float value, it is faster than parsing a string „0.0” to float.
+        }
 
 
         //to make sure you only can delete your own posts

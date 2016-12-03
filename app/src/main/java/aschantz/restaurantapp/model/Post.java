@@ -16,11 +16,15 @@ public class Post {
     private String body;
     private String userRating;
     private String googleRating;
+    private String priceRange;
+    private Boolean resAccepted;
+    private Boolean veg;
 
     public Post() {
     }
 
-    public Post(String uid, String author, String place, String title, String body, String userRating, String googleRating) {
+    public Post(String uid, String author, String place, String title, String body,
+                String userRating, String googleRating, String priceRange, Boolean resAccepted, Boolean veg) {
         this.uid = uid;
         this.author = author;
         this.place = place;
@@ -28,6 +32,9 @@ public class Post {
         this.body = body;
         this.userRating = userRating;
         this.googleRating = googleRating;
+        this.priceRange = priceRange;
+        this.resAccepted = resAccepted;
+        this.veg = veg;
 
     }
 
@@ -42,6 +49,9 @@ public class Post {
         result.put("body", body);
         result.put("userRating", userRating);
         result.put("googleRating",googleRating);
+        result.put("priceRange", priceRange);
+        result.put("resAccepted", resAccepted);
+        result.put("veg", veg);
 
         return result;
     }
@@ -100,6 +110,30 @@ public class Post {
 
     public void setGoogleRating(String googleRating) {
         this.googleRating = googleRating;
+    }
+
+    public String getPriceRange() {
+        return priceRange;
+    }
+
+    public void setPriceRange(String priceRange) {
+        this.priceRange = priceRange;
+    }
+
+    public Boolean getResAccepted() {
+        return resAccepted;
+    }
+
+    public void setResAccepted(Boolean resAccepted) {
+        this.resAccepted = resAccepted;
+    }
+
+    public Boolean getVeg() {
+        return veg;
+    }
+
+    public void setVeg(Boolean veg) {
+        this.veg = veg;
     }
 }
 

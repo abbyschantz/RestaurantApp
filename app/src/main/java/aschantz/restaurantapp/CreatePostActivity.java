@@ -5,12 +5,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.common.api.BooleanResult;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
@@ -39,6 +44,10 @@ public class CreatePostActivity extends BaseActivity implements PlaceSelectionLi
     private RatingBar userRatingBar;
     private String userRating;
 
+    String priceRange;
+    Boolean resAccepted;
+    Boolean veg;
+
     @BindView(R.id.etTitle)
     EditText etTitle;
     @BindView(R.id.etBody)
@@ -56,7 +65,6 @@ public class CreatePostActivity extends BaseActivity implements PlaceSelectionLi
 
         userRatingBar = (RatingBar) findViewById(R.id.userRatingBar);
         userRating = Float.toString(userRatingBar.getRating());
-        Log.d("USER RATING", userRating);
 
         // PLACES AUTOCOMPLETE FRAGMENT
         PlaceAutocompleteFragment autocompleteFragment = (PlaceAutocompleteFragment)
@@ -75,8 +83,9 @@ public class CreatePostActivity extends BaseActivity implements PlaceSelectionLi
         //get reference to the firebase database, then say we want to work with the post child
         //want to create new method under the posts
         String key = FirebaseDatabase.getInstance().getReference().child("posts").push().getKey();
-        Log.d("user rating: ", userRating);
-        Post newPost = new Post(getUid(), getUserName(), placeName, etTitle.getText().toString(), etBody.getText().toString(), userRating, "4.0");
+        userRating = Float.toString(userRatingBar.getRating());
+        Post newPost = new Post(getUid(), getUserName(), placeName, etTitle.getText().toString(), etBody.getText().toString(),
+                userRating, googleRating, priceRange, resAccepted, veg);
 
         //makes branch in database for post, then the key, then the post data
         FirebaseDatabase.getInstance().getReference().child("posts").child(key).setValue(newPost);
@@ -123,5 +132,52 @@ public class CreatePostActivity extends BaseActivity implements PlaceSelectionLi
         Log.e(LOG_TAG, "onError: Status = " + status.toString());
         Toast.makeText(this, "Place selection failed: " + status.getStatusMessage(),
                 Toast.LENGTH_SHORT).show();
+    }
+
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.basicallyFree:
+                if (checked)
+                    priceRange = getResources().getString(R.string.basically_free);
+                    break;
+            case R.id.cheap:
+                if (checked)
+                    priceRange = getResources().getString(R.string.affordable);
+                    break;
+            case R.id.moderate:
+                if (checked)
+                    priceRange = getResources().getString(R.string.techy);
+                    break;
+            case R.id.expensive:
+                if (checked)
+                    priceRange = getResources().getString(R.string.paycheck);
+                    break;
+        }
+    }
+
+    public void onCheckboxClicked(View view) {
+        // Is the view now checked?
+        boolean checked = ((CheckBox) view).isChecked();
+
+        // Check which checkbox was clicked
+        switch(view.getId()) {
+            case R.id.cbResAccepted:
+                if (checked)
+                    resAccepted = true;
+                else
+                    resAccepted = false;
+                break;
+            case R.id.cbVeg:
+                if (checked)
+                    veg = true;
+                else
+                    veg = false;
+                break;
+            // TODO: Veggie sandwich
+        }
     }
 }
