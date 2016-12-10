@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">RestaurantApp</string>
 
+    <string name="app_n_name">Get Rec\'d</string>
+
     <string name="place_data">
         Name: %1$s\nAddress: %2$s\nPhone: %3$s\nWebsite: %4$s\nRating: %5$s\n
     </string>

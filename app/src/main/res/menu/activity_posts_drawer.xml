@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/posts"
-        android:icon="@android:drawable/ic_dialog_info"
+        android:icon="@mipmap/ic_description_black_24dp"
         android:title="@string/posts"/>
 
     <item android:id="@+id/add_friend"
-        android:icon="@android:drawable/ic_input_add"
+        android:icon="@mipmap/ic_person_add_black_24dp"
         android:title="@string/add_friend"/>
 
     <item android:id="@+id/view_friends"
-        android:icon="@android:drawable/ic_dialog_info"
+        android:icon="@mipmap/ic_perm_contact_calendar_black_24dp"
         android:title="@string/view_friends"/>
 
     <item android:id="@+id/about"
@@ -19,7 +19,7 @@
 
     <item
         android:id="@+id/nav_logout"
-        android:icon="@android:drawable/ic_btn_speak_now"
+        android:icon="@android:drawable/ic_menu_edit"
         android:title="Logout" />
 
 </menu>
