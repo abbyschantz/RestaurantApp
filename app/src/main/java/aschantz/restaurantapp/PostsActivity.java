@@ -141,6 +141,9 @@ public class PostsActivity extends BaseActivity implements NavigationView.OnNavi
             startActivity(new Intent(this, LoginActivity.class));
             finish();
         }
+        if (id == R.id.add_friend) {
+            startActivity(new Intent(this, AddFriendActivity.class));
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

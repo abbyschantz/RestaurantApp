@@ -21,7 +21,7 @@
     <string name="action_settings">Settings</string>
 
 
-    <string name="free">under $10</string>
+    <string name="free">$10-</string>
     <string name="cheap">$10-$20</string>
     <string name="moderate">$20-$50</string>
     <string name="expensive">$50+</string>
@@ -33,5 +33,50 @@
 
     <string name="veg">Veggie Options?</string>
     <string name="resAccepted">Reservations Accepted?</string>
+
+
+    <string name="not_accepted">no</string>
+    <string name="accepted">yes</string>
+    <string name="recommended">I would</string>
+    <string name="hard_to_get">Do, but hard</string>
+    <string name="unknown">N/A</string>
+
+    <string name="no_wait">0-10</string>
+    <string name="short_wait">10-30</string>
+    <string name="long_wait">30-60</string>
+    <string name="forever">60+</string>
+
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+
+    <string name="no_alcohol">Nada</string>
+    <string name="soft_alcohol">Soft</string>
+    <string name="hard_alcohol">Hard</string>
+    <string name="all_alcohol">All</string>
+
+    <string name="only_options">Only</string>
+    <string name="lots_options">Lots</string>
+    <string name="few_options">A Few</string>
+    <string name="no_options">None</string>
+
+    <string name="lighting_hint">Lighting from dark to bright</string>
+    <string name="gluten_hint">Gluten-free options?</string>
+    <string name="veg_hint">Vegetarian options?</string>
+    <string name="service_hint">Service from non existent to phenomenal</string>
+    <string name="location_hint">Location from sleepy to busy</string>
+    <string name="noise_hint">Noise from silent to loud</string>
+    <string name="alcohol_hint">Drink options?</string>
+    <string name="wait_hint">Without a reservation, how many minutes is the wait?</string>
+    <string name="price_hint">Average price?</string>
+    <string name="res_hint">Reservations?</string>
+    <string name="ethnicity_hint">What type of food is it?</string>
+    <string name="dish_hint">Dishes to get/avoid?</string>
+    <string name="note_hint">Anything to add?</string>
+
+    <string name="send_create">SUBMIT</string>
+
+    <string name="add_friend">Add Friend</string>
 
 </resources>

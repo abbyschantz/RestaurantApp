@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="loginBackground">#0027FF</color>
+    <color name="radioUnderline">#c2c0c0</color>
 </resources>

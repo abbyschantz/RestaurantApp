@@ -16,6 +16,8 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.List;
+
 import aschantz.restaurantapp.model.User;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,9 +31,12 @@ public class LoginActivity extends BaseActivity {
     EditText etEmail;
     @BindView(R.id.etPassword)
     EditText etPassword;
+    List friendList;
 
     DatabaseReference databaseReference;
     FirebaseAuth firebaseAuth;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +47,13 @@ public class LoginActivity extends BaseActivity {
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
         firebaseAuth = FirebaseAuth.getInstance();
+
+
+
     }
 
     @OnClick(R.id.btnRegister)
-    void registerClick() {
+    void sendClick() {
         if(!isFormValid()) {
             return;
         }
@@ -64,7 +72,11 @@ public class LoginActivity extends BaseActivity {
                                     setDisplayName(usernameFromEmail(fbUser.getEmail())).build());
 
 
-                            User user = new User(usernameFromEmail(fbUser.getEmail()), fbUser.getEmail());
+
+
+
+
+                            User user = new User(fbUser.getEmail(), usernameFromEmail(fbUser.getEmail()), friendList);
                             databaseReference.child("users").child(fbUser.getUid()).setValue(user);
 
                             Toast.makeText(LoginActivity.this, "User created", Toast.LENGTH_SHORT).show();

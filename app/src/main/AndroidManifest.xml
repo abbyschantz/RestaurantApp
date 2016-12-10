@@ -33,6 +33,11 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".CreatePostActivity"></activity>
 
+        <activity
+            android:name=".AddFriendActivity"
+            android:label="AddFriendActivity"
+            android:theme="@style/Base.Theme.AppCompat.Dialog"/>
+
         <service
             android:name=".ForumMessagingService">
             <intent-filter>

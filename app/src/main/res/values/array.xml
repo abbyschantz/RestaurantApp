@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="resAccepted_array">
+        <item>Not Accepted</item>
+        <item>Accepted</item>
+        <item>Recommended</item>
+        <item>Unknown</item>
+    </string-array>
+</resources>
