@@ -36,6 +36,7 @@ import aschantz.restaurantapp.model.Post;
 public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public CardView card_view;
+        public TextView tvUserId;
         public TextView tvAuthor;
         public TextView tvPlace;
         public TextView tvTitle;
@@ -55,6 +56,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
         public ViewHolder(View itemView) {
             super(itemView);
             card_view = (CardView) itemView.findViewById(R.id.card_view);
+            tvUserId = (TextView) itemView.findViewById(R.id.tvUserId);
             tvAuthor = (TextView) itemView.findViewById(R.id.tvAuthor);
             tvPlace = (TextView) itemView.findViewById(R.id.tvPlace);
             tvTitle = (TextView) itemView.findViewById(R.id.tvTitle);
@@ -110,6 +112,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
     public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
         Post tmpPost = postList.get(position);
 
+        viewHolder.tvUserId.setText(tmpPost.getUid());
         viewHolder.tvAuthor.setText(tmpPost.getAuthor());
         viewHolder.tvPlace.setText(tmpPost.getPlace());
         viewHolder.tvTitle.setText(tmpPost.getTitle());
@@ -159,17 +162,17 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
         }
 
         try {
-            if (tmpPost.getAlc().equals("no_alcohol")) {
+            if (tmpPost.getAlc().equals("Nada")) {
                 //viewHolder.veg.setImageResource(R.drawable.vegtemp);
-                viewHolder.alc.setImageResource(R.mipmap.ic_launcher);
-            } else if (tmpPost.getAlc().equals("soft_alcohol")) {
-                viewHolder.alc.setImageResource(R.mipmap.ic_launcher);
-            } else if (tmpPost.getAlc().equals("hard_alcohol")) {
-                viewHolder.alc.setImageResource(R.mipmap.ic_launcher);
-            } else if (tmpPost.getAlc().equals("all_alcohol")) {
-                viewHolder.alc.setImageResource(R.mipmap.ic_launcher);
+                viewHolder.alc.setImageResource(R.mipmap.alc_red);
+            } else if (tmpPost.getAlc().equals("Soft")) {
+                viewHolder.alc.setImageResource(R.mipmap.alc_orange);
+            } else if (tmpPost.getAlc().equals("Hard")) {
+                viewHolder.alc.setImageResource(R.mipmap.alc_yellow);
+            } else if (tmpPost.getAlc().equals("Bar")) {
+                viewHolder.alc.setImageResource(R.mipmap.alc_green);
             } else {
-                viewHolder.alc.setImageResource(R.mipmap.ic_launcher);
+                viewHolder.alc.setImageResource(R.mipmap.alc_unknown);
             }
 
         } catch (Exception e) {
@@ -179,15 +182,15 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
         try {
             if (tmpPost.getWait().equals("0-10")) {
                 //viewHolder.veg.setImageResource(R.drawable.vegtemp);
-                viewHolder.wait.setImageResource(R.mipmap.ic_launcher);
+                viewHolder.wait.setImageResource(R.mipmap.wait_green);
             } else if (tmpPost.getWait().equals("10-30")) {
-                viewHolder.wait.setImageResource(R.mipmap.ic_launcher);
+                viewHolder.wait.setImageResource(R.mipmap.wait_yellow);
             } else if (tmpPost.getWait().equals("30-60")) {
-                viewHolder.wait.setImageResource(R.mipmap.ic_launcher);
+                viewHolder.wait.setImageResource(R.mipmap.wait_orange);
             } else if (tmpPost.getWait().equals("60+")) {
-                viewHolder.wait.setImageResource(R.mipmap.ic_launcher);
+                viewHolder.wait.setImageResource(R.mipmap.wait_red);
             } else {
-                viewHolder.wait.setImageResource(R.mipmap.ic_launcher);
+                viewHolder.wait.setImageResource(R.mipmap.wait_unknown);
             }
 
         } catch (Exception e) {
@@ -197,15 +200,15 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
         try {
             if (tmpPost.getRes().equals("no")) {
                 //viewHolder.veg.setImageResource(R.drawable.vegtemp);
-                viewHolder.res.setImageResource(R.mipmap.ic_launcher);
+                viewHolder.res.setImageResource(R.mipmap.res_red);
             } else if (tmpPost.getRes().equals("yes")) {
-                viewHolder.res.setImageResource(R.mipmap.ic_launcher);
+                viewHolder.res.setImageResource(R.mipmap.res_yellow);
             } else if (tmpPost.getRes().equals("I would")) {
-                viewHolder.res.setImageResource(R.mipmap.ic_launcher);
+                viewHolder.res.setImageResource(R.mipmap.res_green);
             } else if (tmpPost.getRes().equals("Do, but hard")) {
-                viewHolder.res.setImageResource(R.mipmap.ic_launcher);
+                viewHolder.res.setImageResource(R.mipmap.res_orange);
             } else {
-                viewHolder.res.setImageResource(R.mipmap.ic_launcher);
+                viewHolder.res.setImageResource(R.mipmap.res_unknown);
             }
 
         } catch (Exception e) {
@@ -251,44 +254,56 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
 
         setAnimation(viewHolder.itemView, position);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        try {
-            final FirebaseDatabase database = FirebaseDatabase.getInstance();
-            DatabaseReference ref = database.getReferenceFromUrl("https://restaurantsapp-9a203.firebaseio.com/");
-
-
-            //DatabaseReference usersRef = ref.child("users").child("friends");
-
-            ValueEventListener usersEventListener = ref.child("friends").addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot snapshot) {
-                    //friendObject = snapshot.getValue();
-
-
-                    //for (int i = 0; i < friendObject.toString().length(); i++ ){
-                    //System.out.println(friendObject.toString().charAt(i));
-
-                    //}
-                    String author = viewHolder.tvAuthor.getText().toString();
-                    System.out.println(snapshot.getValue());  //prints "Do you have data? You'll love Firebase."
-                    System.out.println(uId);
-                    try {
-                        if (!snapshot.getValue().toString().contains("{email=" + author + ", uid=" + uId)) {
-                            System.out.println("HAPPYHAPPYJOYJOY");
-                            viewHolder.card_view.setVisibility(View.GONE);
-                        }
-                    } catch (Exception e) {
-
-                    }
-                }
-
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-
-                }
-            });
-        } catch (Exception e) {
-
-        }
+//        try {
+//            final FirebaseDatabase database = FirebaseDatabase.getInstance();
+//            DatabaseReference ref = database.getReferenceFromUrl("https://restaurantsapp-9a203.firebaseio.com/");
+//
+//
+//            //DatabaseReference usersRef = ref.child("users").child("friends");
+//
+//            ValueEventListener usersEventListener = ref.child("friends").addValueEventListener(new ValueEventListener() {
+//                @Override
+//                public void onDataChange(DataSnapshot snapshot) {
+//                    //friendObject = snapshot.getValue();
+//
+//
+//                    //for (int i = 0; i < friendObject.toString().length(); i++ ){
+//                    //System.out.println(friendObject.toString().charAt(i));
+//
+//                    //}
+//                    String author = viewHolder.tvAuthor.getText().toString();
+//                    String userId = viewHolder.tvUserId.getText().toString();
+//
+//                    System.out.println(snapshot.getValue());  //prints "Do you have data? You'll love Firebase."
+//                    System.out.println(uId);
+//                    System.out.println("USER ID"+userId);
+//                    System.out.println("uId"+uId);
+//                    try {
+//                        if (!snapshot.getValue().toString().contains("{email=" + author + ", uid=" + uId)) {
+//                            if(userId.equals(uId)) {
+//                                System.out.println("INSIDE SECOND IF");
+//                                //viewHolder.card_view.setVisibility(View.VISIBLE);
+//                                //System.out.println(viewHolder.tvAuthor.getText());
+//                            } else {
+//                                //viewHolder.card_view.setVisibility(View.GONE);
+//                                removePost(position);
+//                            }
+//                            //System.out.println("HAPPYHAPPYJOYJOY");
+//                            //viewHolder.card_view.setVisibility(View.GONE);
+//                        }
+//                    } catch (Exception e) {
+//
+//                    }
+//                }
+//
+//                @Override
+//                public void onCancelled(DatabaseError databaseError) {
+//
+//                }
+//            });
+//        } catch (Exception e) {
+//
+//        }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -309,7 +324,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
         postsRef.child(postKeys.get(index)).removeValue();
         postList.remove(index);
         postKeys.remove(index);
-        notifyItemRemoved(index);
+        //notifyItemRemoved(index);
     }
 
 

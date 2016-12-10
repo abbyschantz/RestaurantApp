@@ -5,4 +5,13 @@
     <color name="colorAccent">#FF4081</color>
     <color name="loginBackground">#0027FF</color>
     <color name="radioUnderline">#c2c0c0</color>
+
+
+    <color name="blackish">#040F0F</color>
+    <color name="lightTeal">#92DCE5</color>
+    <color name="softPink">#EEE5E9</color>
+    <color name="mediumGray">#7C7C7C</color>
+    <color name="darkGray">#454545</color>
+    <color name="superLightGray">#E8E8E8</color>
+
 </resources>

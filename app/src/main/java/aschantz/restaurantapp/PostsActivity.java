@@ -28,8 +28,9 @@ import aschantz.restaurantapp.model.Post;
 /**
  * Created by aschantz on 12/2/16.
  */
-public class PostsActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class PostsActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
     private PostsAdapter postsAdapter;
+    String friendsSnapshotValue;
     //private FriendsAdapter friendsAdapter;
 
     @Override
@@ -79,8 +80,25 @@ public class PostsActivity extends BaseActivity implements NavigationView.OnNavi
         ref.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Post newPost = dataSnapshot.getValue(Post.class);
-                postsAdapter.addPost(newPost, dataSnapshot.getKey());
+                DataSnapshot dataSnapshotWithin = dataSnapshot;
+                final Post newPost = dataSnapshot.getValue(Post.class);
+                final String postUid = newPost.getUid();
+                final String postAuthor = newPost.getAuthor();
+                System.out.println("friends snapshot value"+friendsSnapshotValue);
+                if (getUid().equals(postUid)) {
+                    postsAdapter.addPost(newPost, dataSnapshot.getKey());
+                    System.out.println(dataSnapshot.getValue().toString());
+
+                } else {
+                    checkFriends(postAuthor, dataSnapshotWithin, newPost);
+                    //if(friendsSnapshotValue.contains("{email=" + postAuthor + ", uid=" + getUid())) {
+                        //System.out.println("FRIENDSSNAPSHOTVALUEIN");
+
+
+                }
+
+//
+                //postsAdapter.addPost(newPost, dataSnapshot.getKey());
             }
 
             @Override
@@ -161,44 +179,46 @@ public class PostsActivity extends BaseActivity implements NavigationView.OnNavi
         }
 
 
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-//    private void checkFriends() {
-//        final FirebaseDatabase database = FirebaseDatabase.getInstance();
-//        DatabaseReference ref = database.getReferenceFromUrl("https://restaurantsapp-9a203.firebaseio.com/");
-//
-//        //DatabaseReference usersRef = ref.child("users").child("friends");
-//
-//        ValueEventListener usersEventListener = ref.child("friends").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot snapshot) {
-//                //friendObject = snapshot.getValue();
-//
-//
-//
-//
-//                //for (int i = 0; i < friendObject.toString().length(); i++ ){
-//                    //System.out.println(friendObject.toString().charAt(i));
-//
-//                //}
-//                System.out.println(snapshot.getValue());  //prints "Do you have data? You'll love Firebase."
-//                System.out.println(getUid());
-//                if (snapshot.getValue().toString().contains("{email=Tobias, uid="+getUid())) {
-//                    System.out.println("HAPPYHAPPYJOYJOY");
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//
-//            }
-//        });
-//    }
+    private void checkFriends(final String postAuthor, DataSnapshot dataSnapshot, Post newPost) {
+        try {
+            final FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference ref = database.getReferenceFromUrl("https://restaurantsapp-9a203.firebaseio.com/");
+            final DataSnapshot dataSnapshotIN = dataSnapshot;
+            final Post newPostIN = newPost;
 
+            //DatabaseReference usersRef = ref.child("users").child("friends");
+
+            ValueEventListener usersEventListener = ref.child("friends").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot snapshot) {
+
+                    friendsSnapshotValue = snapshot.getValue().toString();
+
+                    try {
+                        if (snapshot.getValue().toString().contains("{email=" + postAuthor + ", uid=" + getUid())) {
+                            //postsAdapter.addPost(newPost, dataSnapshot.getKey());
+                            postsAdapter.addPost(newPostIN, dataSnapshotIN.getKey());
+                        }
+                    } catch (Exception e) {
+
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+        } catch (Exception e) {
+
+        }
+
+    }
 
 
 }

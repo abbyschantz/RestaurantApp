@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayou
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_view"
@@ -6,11 +7,16 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:layout_margin="10dp"
+    android:background="@color/colorPrimaryDark"
     card_view:cardCornerRadius="4dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="@color/mediumGray"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -18,10 +24,16 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/tvUserId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+            <TextView
                 android:id="@+id/tvAuthor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
+                android:textColor="@color/softPink"
                 android:layout_gravity="right" />
 
             <TextView
@@ -29,94 +41,117 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
+                android:textColor="@color/lightTeal"
                 android:layout_gravity="left"
                 android:textSize="22dp"
                 android:textStyle="bold" />
         </RelativeLayout>
 
+
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:orientation="vertical">
+                <RatingBar
+                    android:id="@+id/userRatingBar"
+                    style="@style/Base.Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:layout_gravity="center_horizontal"
+                    android:rating="0.0" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/softPink"
+                    android:text="User Rating"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="10dp" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical">
+                <RatingBar
+                    android:id="@+id/googleRatingBar"
+                    style="@style/Base.Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:layout_gravity="center_horizontal"
+                    android:rating="0.0" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/softPink"
+                    android:text="Google Rating"
+                    android:textSize="10dp" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+
+
+
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/softPink"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvBody"
             android:layout_width="wrap_content"
+            android:textColor="@color/softPink"
             android:layout_height="wrap_content" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:orientation="vertical">
-                    <RatingBar
-                        android:id="@+id/userRatingBar"
-                        style="@style/Base.Widget.AppCompat.RatingBar.Small"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:isIndicator="true"
-                        android:numStars="5"
-                        android:layout_gravity="center_horizontal"
-                        android:rating="0.0" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="User Rating"
-                        android:layout_gravity="center_horizontal"
-                        android:textSize="10dp" />
-                </LinearLayout>
-
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:orientation="vertical">
-                    <RatingBar
-                        android:id="@+id/googleRatingBar"
-                        style="@style/Base.Widget.AppCompat.RatingBar.Small"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:isIndicator="true"
-                        android:numStars="5"
-                        android:layout_gravity="center_horizontal"
-                        android:rating="0.0" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Google Rating"
-                        android:textSize="10dp" />
-                </LinearLayout>
-
-
-        </LinearLayout>
 
         <TextView
             android:id="@+id/priceRange"
             android:layout_width="wrap_content"
+            android:textColor="@color/softPink"
             android:layout_height="wrap_content"/>
 
         <TextView
             android:id="@+id/dishes"
             android:layout_width="wrap_content"
+            android:textColor="@color/softPink"
             android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
+
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
             android:orientation="horizontal">
 
             <ImageView
@@ -155,10 +190,15 @@
 
         <Button
             android:id="@+id/btnDelete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="bottom"
             android:background="@android:drawable/ic_menu_delete" />
+
+        </RelativeLayout>
     </LinearLayout>
 
 
