@@ -6,6 +6,10 @@
         android:title="@string/add_friend" />
 
     <item
+        android:id="@+id/view_friends"
+        android:title="@string/view_friends" />
+
+    <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"

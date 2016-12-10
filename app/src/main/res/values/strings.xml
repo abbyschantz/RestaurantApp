@@ -78,5 +78,8 @@
     <string name="send_create">SUBMIT</string>
 
     <string name="add_friend">Add Friend</string>
+    <string name="view_friends">View Friends</string>
+    <string name="about">About</string>
+    <string name="posts">Posts</string>
 
 </resources>

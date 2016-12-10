@@ -38,6 +38,15 @@
             android:label="AddFriendActivity"
             android:theme="@style/Base.Theme.AppCompat.Dialog"/>
 
+        <activity
+            android:name=".FriendsActivity"
+            android:label="FriendsActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".AboutActivity"
+            android:label="AboutActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
         <service
             android:name=".ForumMessagingService">
             <intent-filter>

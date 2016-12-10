@@ -20,22 +20,21 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import aschantz.restaurantapp.model.Friend;
 import aschantz.restaurantapp.model.Post;
 
 /**
- * Created by aschantz on 12/2/16.
+ * Created by aschantz on 12/10/16.
  */
-public class PostsActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener{
-    private PostsAdapter postsAdapter;
-    //private FriendsAdapter friendsAdapter;
+public class FriendsActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    private FriendsAdapter friendsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_posts);
+        setContentView(R.layout.activity_friends);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -43,7 +42,7 @@ public class PostsActivity extends BaseActivity implements NavigationView.OnNavi
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(PostsActivity.this, CreatePostActivity.class));
+                startActivity(new Intent(FriendsActivity.this, AddFriendActivity.class));
             }
         });
 
@@ -56,31 +55,25 @@ public class PostsActivity extends BaseActivity implements NavigationView.OnNavi
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        postsAdapter = new PostsAdapter(getApplicationContext(), getUid());
+        friendsAdapter = new FriendsAdapter(getApplicationContext(), getUid());
         RecyclerView recyclerViewPlaces = (RecyclerView) findViewById(
                 R.id.recyclerViewPosts);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setReverseLayout(true);
         layoutManager.setStackFromEnd(true);
         recyclerViewPlaces.setLayoutManager(layoutManager);
-        recyclerViewPlaces.setAdapter(postsAdapter);
+        recyclerViewPlaces.setAdapter(friendsAdapter);
 
         initPostListener();
-
-//        friendsAdapter = new FriendsAdapter(getApplicationContext(), getUid());
-//        Friend youFriend = new Friend(getUid(), getUserName());
-//        friendsAdapter.addFriend(youFriend, getUid());
-
-        //checkFriends();
     }
 
     private void initPostListener() {
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("posts");
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("friends");
         ref.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Post newPost = dataSnapshot.getValue(Post.class);
-                postsAdapter.addPost(newPost, dataSnapshot.getKey());
+                Friend newFriend = dataSnapshot.getValue(Friend.class);
+                friendsAdapter.addFriend(newFriend, dataSnapshot.getKey());
             }
 
             @Override
@@ -153,52 +146,12 @@ public class PostsActivity extends BaseActivity implements NavigationView.OnNavi
         if (id == R.id.add_friend) {
             startActivity(new Intent(this, AddFriendActivity.class));
         }
-        if (id == R.id.view_friends) {
-            startActivity(new Intent(this, FriendsActivity.class));
+        if (id == R.id.posts) {
+            startActivity(new Intent(this, PostsActivity.class));
         }
-        if (id == R.id.about) {
-            startActivity(new Intent(this, AboutActivity.class));
-        }
-
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-//    private void checkFriends() {
-//        final FirebaseDatabase database = FirebaseDatabase.getInstance();
-//        DatabaseReference ref = database.getReferenceFromUrl("https://restaurantsapp-9a203.firebaseio.com/");
-//
-//        //DatabaseReference usersRef = ref.child("users").child("friends");
-//
-//        ValueEventListener usersEventListener = ref.child("friends").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot snapshot) {
-//                //friendObject = snapshot.getValue();
-//
-//
-//
-//
-//                //for (int i = 0; i < friendObject.toString().length(); i++ ){
-//                    //System.out.println(friendObject.toString().charAt(i));
-//
-//                //}
-//                System.out.println(snapshot.getValue());  //prints "Do you have data? You'll love Firebase."
-//                System.out.println(getUid());
-//                if (snapshot.getValue().toString().contains("{email=Tobias, uid="+getUid())) {
-//                    System.out.println("HAPPYHAPPYJOYJOY");
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//
-//            }
-//        });
-//    }
-
-
-
 }
