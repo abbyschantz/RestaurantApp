@@ -6,15 +6,17 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:layout_margin="10dp"
-    card_view:cardCornerRadius="4dp">
+    card_view:cardCornerRadius="15dp">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:backgroundTint="@color/mediumGray"
+        android:background="@color/mediumGray"
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="match_parent"
+            android:layout_alignParentLeft="true"
             android:layout_height="wrap_content">
 
             <TextView
@@ -28,6 +30,9 @@
                 android:id="@+id/tvEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/five"
                 android:layout_alignParentLeft="true"
                 android:layout_gravity="left"
                 android:textSize="22dp"
@@ -39,9 +44,11 @@
             android:id="@+id/btnDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:scaleX=".8"
             android:layout_gravity="bottom"
-            android:background="@mipmap/ic_clear_black_24dp" />
-    </LinearLayout>
+            android:layout_alignParentRight="true"
+            android:background="@drawable/remove" />
+    </RelativeLayout>
 
 
 </android.support.v7.widget.CardView>

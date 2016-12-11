@@ -90,7 +90,12 @@
     <string name="user_rating">user rating</string>
     <string name="google_rating">google rating</string>
 
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+
     <string name="add_friend_hint">Enter friend\'s username</string>
+
+    <string name="icons">Icons</string>
     <string name="icon_source">Icons taken from <a href="https://icons8.com/web-app/6536/Vegan-Food">Vegan food icon credits</a></string>
 
 </resources>

@@ -141,8 +141,10 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
                 viewHolder.veg.setImageResource(R.mipmap.veg);
                 viewHolder.veg.setColorFilter(ContextCompat.getColor(context,R.color.four));
             } else {
-                viewHolder.veg.setImageResource(R.mipmap.veg);
-                viewHolder.veg.setColorFilter(ContextCompat.getColor(context,R.color.five));
+                viewHolder.veg.setImageResource(R.mipmap.face);
+                viewHolder.veg.setBackgroundResource(R.mipmap.gv);
+                viewHolder.veg.setAlpha(100);
+                viewHolder.veg.setColorFilter(ContextCompat.getColor(context,R.color.lightTeal));
             }
 
         } catch (Exception e) {
@@ -165,9 +167,9 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
                 viewHolder.gluten.setColorFilter(ContextCompat.getColor(context,R.color.four));
             } else {
                 viewHolder.gluten.setImageResource(R.mipmap.face);
-                viewHolder.gluten.setBackgroundResource(R.mipmap.no_gluten);
+                viewHolder.gluten.setBackgroundResource(R.mipmap.gg);
                 viewHolder.gluten.setAlpha(100);
-                viewHolder.gluten.setColorFilter(ContextCompat.getColor(context,R.color.five));
+                viewHolder.gluten.setColorFilter(ContextCompat.getColor(context,R.color.lightTeal));
             }
 
         } catch (Exception e) {
@@ -207,8 +209,10 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
                 viewHolder.alc.setImageResource(R.mipmap.cock);
                 viewHolder.alc.setColorFilter(ContextCompat.getColor(context,R.color.four));
             } else {
-                viewHolder.alc.setImageResource(R.mipmap.wine);
-                viewHolder.alc.setColorFilter(ContextCompat.getColor(context,R.color.five));
+                viewHolder.alc.setImageResource(R.mipmap.face);
+                viewHolder.alc.setBackgroundResource(R.mipmap.mcock);
+                viewHolder.alc.setAlpha(127);
+                viewHolder.alc.setColorFilter(ContextCompat.getColor(context,R.color.lightTeal));
             }
 
         } catch (Exception e) {
@@ -230,8 +234,10 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
                 viewHolder.wait.setImageResource(R.mipmap.hourglass);
                 viewHolder.wait.setColorFilter(ContextCompat.getColor(context,R.color.one));
             } else {
-                viewHolder.wait.setImageResource(R.mipmap.wait_unknown);
-                viewHolder.wait.setColorFilter(ContextCompat.getColor(context,R.color.five));
+                viewHolder.wait.setImageResource(R.mipmap.face);
+                viewHolder.wait.setBackgroundResource(R.mipmap.ghour);
+                viewHolder.wait.setAlpha(100);
+                viewHolder.wait.setColorFilter(ContextCompat.getColor(context,R.color.lightTeal));
             }
 
         } catch (Exception e) {
@@ -253,8 +259,10 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
                 viewHolder.res.setImageResource(R.mipmap.cal);
                 viewHolder.res.setColorFilter(ContextCompat.getColor(context,R.color.two));
             } else {
-                viewHolder.res.setImageResource(R.mipmap.cal);
-                viewHolder.res.setColorFilter(ContextCompat.getColor(context,R.color.five));
+                viewHolder.res.setImageResource(R.mipmap.face);
+                viewHolder.res.setBackgroundResource(R.mipmap.gcal);
+                viewHolder.res.setAlpha(100);
+                viewHolder.res.setColorFilter(ContextCompat.getColor(context,R.color.lightTeal));
             }
 
         } catch (Exception e) {
