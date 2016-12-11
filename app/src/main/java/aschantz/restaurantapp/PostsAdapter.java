@@ -295,7 +295,12 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
             viewHolder.btnDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    removePost(position);
+                    try {
+                        removePost(position);
+                    } catch (Exception e){
+
+                    }
+
                 }
             });
 

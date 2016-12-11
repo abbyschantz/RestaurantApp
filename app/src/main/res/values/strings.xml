@@ -95,7 +95,36 @@
 
     <string name="add_friend_hint">Enter friend\'s username</string>
 
-    <string name="icons">Icons</string>
+    <string name="icons">Icon Key</string>
     <string name="icon_source">Icons taken from <a href="https://icons8.com/web-app/6536/Vegan-Food">Vegan food icon credits</a></string>
+    <string name="about_get">About Get Rec\'d*</string>
+    <string name="creds">Creds to Carolyn and Sam for the same</string>
 
+    <string name="unknown_desc">Information unknown or n/a</string>
+
+    <string name="res_red">Reservations are not accent</string>
+    <string name="res_one">Reservations are not accepted</string>
+    <string name="res_two">Reservations are accepted and but very hard to get</string>
+    <string name="res_three">Reservations are accepted and I would recommend getting one</string>
+    <string name="res_four">Reservations are accepted</string>
+
+    <string name="wait_one">The wait averages at over an hour, the food is probably amazing.</string>
+    <string name="wait_two">The wait is normally long, bring a book or try somewhere else - 30 minutes to an hour.</string>
+    <string name="wait_three">The wait is reasonable, between 10 minutes and a half hour.</string>
+    <string name="wait_four">There is usually a very short wait, around 0 to 10 minutes.</string>
+
+    <string name="alc_one">You\'re sticking with water, they don\'t serve alcohol.</string>
+    <string name="alc_two">You can get beer and wine, but not much more.</string>
+    <string name="alc_three">They have a hard liquor license, ie they can serve you cocktails.</string>
+    <string name="alc_four">Either they have a notably full/extensive bar, or it is a bar.</string>
+
+    <string name="glut_one">There are no gluten free options.</string>
+    <string name="glut_two">There\'s at least one option that is gluten free.</string>
+    <string name="glut_three">There are amble options that are gluten free.</string>
+    <string name="glut_four">The entire place is gluten free.</string>
+
+    <string name="veg_one">There are no vegetarian options.</string>
+    <string name="veg_two">At least one dish is vegetarian.</string>
+    <string name="veg_three">Lots of vegetarian dishes to choose from.</string>
+    <string name="veg_four">The entire place is vegetarian.</string>
 </resources>

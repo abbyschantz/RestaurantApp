@@ -73,7 +73,11 @@ public class FriendsActivity extends BaseActivity implements NavigationView.OnNa
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Friend newFriend = dataSnapshot.getValue(Friend.class);
-                friendsAdapter.addFriend(newFriend, dataSnapshot.getKey());
+                final String postUid = newFriend.getUid();
+                if(getUid().equals(postUid)){
+                    friendsAdapter.addFriend(newFriend, dataSnapshot.getKey());
+                }
+
             }
 
             @Override

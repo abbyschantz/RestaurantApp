@@ -7,4 +7,9 @@
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="radio_text_size">16dp</dimen>
+
+    <dimen name="icon_title_size">22dp</dimen>
+    <dimen name="icon_padding_size">10dp</dimen>
+    <dimen name="icon_description_size">14dp</dimen>
 </resources>
+

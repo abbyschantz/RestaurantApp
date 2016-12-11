@@ -1,215 +1,662 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/about_get"
+        android:textSize="40dp"/>
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/about"/>
+        android:text="@string/creds"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="30dp"
         android:text="@string/icons"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/icon_title_size"
+        android:text="@string/resAccepted"/>
 
     <LinearLayout
         android:id="@+id/res"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <ImageView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/cal"
-            android:tint="@color/four"/>
+            android:orientation="horizontal">
 
-        <ImageView
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/icon_padding_size"
+                android:paddingRight="@dimen/icon_padding_size"
+                android:src="@mipmap/cal"
+                android:tint="@color/four"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/res_four"
+                android:textSize="@dimen/icon_description_size"/>
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/cal"
-            android:tint="@color/three"/>
+            android:orientation="horizontal">
 
-        <ImageView
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/icon_padding_size"
+                android:paddingRight="@dimen/icon_padding_size"
+                android:src="@mipmap/cal"
+                android:tint="@color/three"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/res_three"
+                android:textSize="@dimen/icon_description_size"/>
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/cal"
-            android:tint="@color/two"/>
+            android:orientation="horizontal">
 
-        <ImageView
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/icon_padding_size"
+                android:paddingRight="@dimen/icon_padding_size"
+                android:src="@mipmap/cal"
+                android:tint="@color/two"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/res_two"
+                android:textSize="@dimen/icon_description_size"/>
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/cal"
-            android:tint="@color/one"/>
+            android:orientation="horizontal">
 
-        <ImageView
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/icon_padding_size"
+                android:paddingRight="@dimen/icon_padding_size"
+                android:src="@mipmap/cal"
+                android:tint="@color/one"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/res_one"
+                android:textSize="@dimen/icon_description_size"/>
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@mipmap/gcal"
-            android:src="@mipmap/face"
-            android:tint="@color/lightTeal"
-            android:alpha="127"/>
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/gcal"
+                android:paddingLeft="@dimen/icon_padding_size"
+                android:paddingRight="@dimen/icon_padding_size"
+                android:src="@mipmap/face"
+                android:tint="@color/lightTeal"
+                android:alpha="127"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/unknown_desc"
+                android:textSize="@dimen/icon_description_size"/>
+        </LinearLayout>
+
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/icon_title_size"
+        android:text="@string/wait_hint"/>
 
     <LinearLayout
         android:id="@+id/wait"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <ImageView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/hourglass"
-            android:tint="@color/four"/>
+            android:orientation="horizontal">
 
-        <ImageView
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/icon_padding_size"
+                android:paddingRight="@dimen/icon_padding_size"
+                android:src="@mipmap/hourglass"
+                android:tint="@color/four"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/wait_four"
+                android:textSize="@dimen/icon_description_size"/>
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/hourglass"
-            android:tint="@color/three"/>
+            android:orientation="horizontal">
 
-        <ImageView
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/icon_padding_size"
+                android:paddingRight="@dimen/icon_padding_size"
+                android:src="@mipmap/hourglass"
+                android:tint="@color/three"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/wait_three"
+                android:textSize="@dimen/icon_description_size"/>
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/hourglass"
-            android:tint="@color/two"/>
+            android:orientation="horizontal">
 
-        <ImageView
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/icon_padding_size"
+                android:paddingRight="@dimen/icon_padding_size"
+                android:src="@mipmap/hourglass"
+                android:tint="@color/two"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/wait_two"
+                android:textSize="@dimen/icon_description_size"/>
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/hourglass"
-            android:tint="@color/one"/>
+            android:orientation="horizontal">
 
-        <ImageView
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/icon_padding_size"
+                android:paddingRight="@dimen/icon_padding_size"
+                android:src="@mipmap/hourglass"
+                android:tint="@color/one"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/wait_one"
+                android:textSize="@dimen/icon_description_size"/>
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@mipmap/ghour"
-            android:src="@mipmap/face"
-            android:tint="@color/lightTeal"
-            android:alpha="127"/>
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/icon_padding_size"
+                android:paddingRight="@dimen/icon_padding_size"
+                android:background="@mipmap/ghour"
+                android:src="@mipmap/face"
+                android:tint="@color/lightTeal"
+                android:alpha="127"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/unknown_desc"
+                android:textSize="@dimen/icon_description_size"/>
+        </LinearLayout>
+
 
     </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/icon_title_size"
+        android:text="@string/veg_hint"/>
 
     <LinearLayout
         android:id="@+id/veg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <ImageView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/veg"
-            android:tint="@color/four"/>
+            android:orientation="horizontal">
 
-        <ImageView
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/icon_padding_size"
+                android:paddingRight="@dimen/icon_padding_size"
+                android:src="@mipmap/veg"
+                android:tint="@color/four"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/veg_four"
+                android:textSize="@dimen/icon_description_size"/>
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/veg"
-            android:tint="@color/three"/>
+            android:orientation="horizontal">
 
-        <ImageView
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/icon_padding_size"
+                android:paddingRight="@dimen/icon_padding_size"
+                android:src="@mipmap/veg"
+                android:tint="@color/three"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/veg_three"
+                android:textSize="@dimen/icon_description_size"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/veg"
-            android:tint="@color/two"/>
+            android:orientation="horizontal">
 
-        <ImageView
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/icon_padding_size"
+                android:paddingRight="@dimen/icon_padding_size"
+                android:src="@mipmap/veg"
+                android:tint="@color/two"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/veg_two"
+                android:textSize="@dimen/icon_description_size"/>
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/veg"
-            android:tint="@color/one"/>
+            android:orientation="horizontal">
 
-        <ImageView
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/icon_padding_size"
+                android:paddingRight="@dimen/icon_padding_size"
+                android:src="@mipmap/veg"
+                android:tint="@color/one"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/veg_one"
+                android:textSize="@dimen/icon_description_size"/>
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@mipmap/gv"
-            android:src="@mipmap/face"
-            android:tint="@color/lightTeal"
-            android:alpha="127"/>
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/gv"
+                android:paddingLeft="@dimen/icon_padding_size"
+                android:paddingRight="@dimen/icon_padding_size"
+                android:src="@mipmap/face"
+                android:tint="@color/lightTeal"
+                android:alpha="127"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/unknown_desc"
+                android:textSize="@dimen/icon_description_size"/>
+        </LinearLayout>
+
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/icon_title_size"
+        android:text="@string/gluten_hint"/>
 
     <LinearLayout
         android:id="@+id/gluten"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <ImageView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/no_gluten"
-            android:tint="@color/four"/>
+            android:orientation="horizontal">
 
-        <ImageView
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/icon_padding_size"
+                android:paddingRight="@dimen/icon_padding_size"
+                android:src="@mipmap/no_gluten"
+                android:tint="@color/four"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/glut_four"
+                android:textSize="@dimen/icon_description_size"/>
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/no_gluten"
-            android:tint="@color/three"/>
+            android:orientation="horizontal">
 
-        <ImageView
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/icon_padding_size"
+                android:paddingRight="@dimen/icon_padding_size"
+                android:src="@mipmap/no_gluten"
+                android:tint="@color/three"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/glut_three"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/icon_description_size"/>
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/no_gluten"
-            android:tint="@color/two"/>
+            android:orientation="horizontal">
 
-        <ImageView
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/icon_padding_size"
+                android:paddingRight="@dimen/icon_padding_size"
+                android:src="@mipmap/no_gluten"
+                android:tint="@color/two"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/glut_two"
+                android:textSize="@dimen/icon_description_size"/>
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/no_gluten"
-            android:tint="@color/one"/>
+            android:orientation="horizontal">
 
-        <ImageView
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/icon_padding_size"
+                android:paddingRight="@dimen/icon_padding_size"
+                android:src="@mipmap/no_gluten"
+                android:tint="@color/one"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/glut_one"
+                android:textSize="@dimen/icon_description_size"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@mipmap/gg"
-            android:src="@mipmap/face"
-            android:tint="@color/lightTeal"
-            android:alpha="127"/>
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/icon_padding_size"
+                android:paddingRight="@dimen/icon_padding_size"
+                android:background="@mipmap/gg"
+                android:src="@mipmap/face"
+                android:tint="@color/lightTeal"
+                android:alpha="127"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/unknown_desc"
+                android:textSize="@dimen/icon_description_size"/>
+        </LinearLayout>
+
 
     </LinearLayout>
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/alcohol_hint"/>
 
     <LinearLayout
         android:id="@+id/alc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:paddingLeft="@dimen/icon_padding_size"
+        android:paddingRight="@dimen/icon_padding_size"
+        android:orientation="vertical">
 
-        <ImageView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/cock"
-            android:tint="@color/four"/>
+            android:orientation="horizontal">
 
-        <ImageView
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/icon_padding_size"
+                android:paddingRight="@dimen/icon_padding_size"
+                android:src="@mipmap/cock"
+                android:tint="@color/four"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/res_four"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/icon_description_size"/>
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/cock"
-            android:tint="@color/three"/>
+            android:orientation="horizontal">
 
-        <ImageView
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/icon_padding_size"
+                android:paddingRight="@dimen/icon_padding_size"
+                android:src="@mipmap/cock"
+                android:tint="@color/three"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/res_three"
+                android:textSize="@dimen/icon_description_size"/>
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/wine"
-            android:tint="@color/two"/>
+            android:orientation="horizontal">
 
-        <ImageView
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/icon_padding_size"
+                android:paddingRight="@dimen/icon_padding_size"
+                android:src="@mipmap/wine"
+                android:tint="@color/two"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/res_two"
+                android:textSize="@dimen/icon_description_size"/>
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/noalc"
-            android:tint="@color/one"/>
+            android:orientation="horizontal">
 
-        <ImageView
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/icon_padding_size"
+                android:paddingRight="@dimen/icon_padding_size"
+                android:src="@mipmap/noalc"
+                android:tint="@color/one"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:text="@string/res_one"
+                android:textSize="@dimen/icon_description_size"/>
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@mipmap/mcock"
-            android:src="@mipmap/face"
-            android:tint="@color/lightTeal"
-            android:alpha="127"/>
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/icon_padding_size"
+                android:paddingRight="@dimen/icon_padding_size"
+                android:background="@mipmap/mcock"
+                android:src="@mipmap/face"
+                android:tint="@color/lightTeal"
+                android:alpha="127"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/unknown_desc"
+                android:textSize="@dimen/icon_description_size"/>
+        </LinearLayout>
+
 
     </LinearLayout>
 
@@ -223,3 +670,4 @@
         android:text="@string/icon_source"/>
 
 </LinearLayout>
+    </ScrollView>
