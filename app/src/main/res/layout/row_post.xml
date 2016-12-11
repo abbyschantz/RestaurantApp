@@ -1,53 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/mediumGray"
+    android:orientation="vertical">
+
+<android.support.v7.widget.CardView
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:layout_margin="10dp"
-    android:background="@color/colorPrimaryDark"
     card_view:cardBackgroundColor="@color/blackish"
     card_view:cardCornerRadius="4dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/mediumGray"
+        android:background="@color/darkGray"
         android:orientation="vertical"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:paddingTop="10dp">
+        <TextView
+            android:id="@+id/tvUserId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="-30dp">
-
-            <TextView
-                android:id="@+id/tvUserId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone" />
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/tvAuthor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
                 android:layout_gravity="right"
                 android:textColor="@color/softPink" />
 
-            <TextView
-                android:id="@+id/tvPlace"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:layout_gravity="left"
-                android:textColor="@color/lightTeal"
-                android:textSize="22dp"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/res"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/veg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/gluten"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/wait"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/alc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
         </RelativeLayout>
 
 
@@ -78,6 +111,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:progressBackgroundTint="@color/lightTeal"
                     android:isIndicator="true"
                     android:numStars="5"
                     android:rating="0.0" />
@@ -106,6 +140,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:isIndicator="true"
+                    android:progressBackgroundTint="@color/lightTeal"
                     android:numStars="5"
                     android:rating="0.0" />
 
@@ -146,51 +181,19 @@
             android:textColor="@color/softPink"
             android:textSize="14dp" />
 
+
+    </LinearLayout>
+
+
+
+
+
         <RelativeLayout
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="10dp">
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:orientation="horizontal"
-                android:paddingTop="10dp">
-
-                <ImageView
-                    android:id="@+id/res"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <ImageView
-                    android:id="@+id/veg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <ImageView
-                    android:id="@+id/gluten"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <ImageView
-                    android:id="@+id/wait"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <ImageView
-                    android:id="@+id/alc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout>
-
-
-            <!--<ImageView
-                android:id="@+id/resAccepted"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" /> -->
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:layout_alignParentBottom="true">
 
 
             <Button
@@ -200,11 +203,35 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
                 android:layout_gravity="bottom"
-                android:background="@android:drawable/ic_menu_delete"
+                android:background="@mipmap/ic_clear_black_24dp"
                 android:gravity="right" />
 
+
+            <TextView
+                android:id="@+id/tvPlace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:maxLines="1"
+                android:layout_gravity="left"
+                android:textColor="@color/lightTeal"
+                android:textSize="26dp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:background="@color/softPink"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_alignParentTop="true"
+                android:layout_height="2dp" />
         </RelativeLayout>
-    </LinearLayout>
+
+    </RelativeLayout>
+
+
 
 
 </android.support.v7.widget.CardView>
+
+</LinearLayout>

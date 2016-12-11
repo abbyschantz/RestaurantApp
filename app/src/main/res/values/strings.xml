@@ -84,4 +84,6 @@
     <string name="about">About</string>
     <string name="posts">Posts</string>
 
+    <string name="add_friend_hint">Enter friend\'s username</string>
+
 </resources>

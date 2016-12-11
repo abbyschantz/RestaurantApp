@@ -114,19 +114,24 @@ public class CreatePostActivity extends BaseActivity implements PlaceSelectionLi
 
     private boolean isFormValid() {
         boolean result = true;
-        if (TextUtils.isEmpty(etEthnicity.getText().toString())) {
-            etEthnicity.setError("Required");
-            result = false;
-        } else {
-            etEthnicity.setError(null);
-        }
-
-        if (TextUtils.isEmpty(etBody.getText().toString())) {
-            etBody.setError("Required");
-            result = false;
-        } else {
-            etBody.setError(null);
-        }
+//        if(TextUtils.isEmpty(placeName.toString())) {
+//            placeName.toString().setError("Required");
+//            result = false;
+//        } else {
+//        }
+//        if (TextUtils.isEmpty(etEthnicity.getText().toString())) {
+//            etEthnicity.setError("Required");
+//            result = false;
+//        } else {
+//            etEthnicity.setError(null);
+//        }
+//
+//        if (TextUtils.isEmpty(etBody.getText().toString())) {
+//            etBody.setError("Required");
+//            result = false;
+//        } else {
+//            etBody.setError(null);
+//        }
 
         return result;
     }
