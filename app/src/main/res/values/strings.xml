@@ -15,7 +15,10 @@
         %1$s\n
     </string>
 
-    <string name="title_activity_posts">PostsActivity</string>
+    <string name="title_activity_posts">Restaurant Suggestions</string>
+    <string name="title_activity_friends">Friends</string>
+    <string name="title_activity_add_friend">Add Friends</string>
+    <string name="title_activity_about">About</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -84,6 +87,10 @@
     <string name="about">About</string>
     <string name="posts">Posts</string>
 
+    <string name="user_rating">user rating</string>
+    <string name="google_rating">google rating</string>
+
     <string name="add_friend_hint">Enter friend\'s username</string>
+    <string name="icon_source">Icons taken from <a href="https://icons8.com/web-app/6536/Vegan-Food">Vegan food icon credits</a></string>
 
 </resources>

@@ -11,7 +11,7 @@
 
     <item android:id="@+id/view_friends"
         android:icon="@mipmap/ic_perm_contact_calendar_black_24dp"
-        android:title="@string/view_friends"/>
+        android:title="@string/view_friends" />
 
     <item android:id="@+id/about"
         android:icon="@android:drawable/ic_dialog_info"

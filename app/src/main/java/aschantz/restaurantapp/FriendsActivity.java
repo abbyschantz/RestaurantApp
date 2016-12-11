@@ -149,6 +149,9 @@ public class FriendsActivity extends BaseActivity implements NavigationView.OnNa
         if (id == R.id.posts) {
             startActivity(new Intent(this, PostsActivity.class));
         }
+        if (id == R.id.about) {
+            startActivity(new Intent(this, AboutActivity.class));
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

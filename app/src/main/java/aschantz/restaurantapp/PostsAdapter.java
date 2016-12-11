@@ -2,6 +2,7 @@ package aschantz.restaurantapp;
 
 import android.content.Context;
 import android.media.Rating;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -128,15 +129,20 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
         try {
             if (tmpPost.getVeg().equals("None")) {
                 //viewHolder.veg.setImageResource(R.drawable.vegtemp);
-                viewHolder.veg.setImageResource(R.mipmap.veg_red);
+                viewHolder.veg.setImageResource(R.mipmap.veg);
+                viewHolder.veg.setColorFilter(ContextCompat.getColor(context,R.color.one));
             } else if (tmpPost.getVeg().equals("A Few")) {
-                viewHolder.veg.setImageResource(R.mipmap.veg_orange);
+                viewHolder.veg.setImageResource(R.mipmap.veg);
+                viewHolder.veg.setColorFilter(ContextCompat.getColor(context,R.color.two));
             } else if (tmpPost.getVeg().equals("Lots")) {
-                viewHolder.veg.setImageResource(R.mipmap.veg_yellow);
+                viewHolder.veg.setImageResource(R.mipmap.veg);
+                viewHolder.veg.setColorFilter(ContextCompat.getColor(context,R.color.three));
             } else if (tmpPost.getVeg().equals("Only")) {
-                viewHolder.veg.setImageResource(R.mipmap.veg_green);
+                viewHolder.veg.setImageResource(R.mipmap.veg);
+                viewHolder.veg.setColorFilter(ContextCompat.getColor(context,R.color.four));
             } else {
-                viewHolder.veg.setImageResource(R.mipmap.veg_unknown);
+                viewHolder.veg.setImageResource(R.mipmap.veg);
+                viewHolder.veg.setColorFilter(ContextCompat.getColor(context,R.color.five));
             }
 
         } catch (Exception e) {
@@ -146,33 +152,63 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
         try {
             if (tmpPost.getGluten().equals("None")) {
                 //viewHolder.veg.setImageResource(R.drawable.vegtemp);
-                viewHolder.gluten.setImageResource(R.mipmap.gf_red);
+                viewHolder.gluten.setImageResource(R.mipmap.no_gluten);
+                viewHolder.gluten.setColorFilter(ContextCompat.getColor(context,R.color.one));
             } else if (tmpPost.getGluten().equals("A Few")) {
-                viewHolder.gluten.setImageResource(R.mipmap.gf_orange);
+                viewHolder.gluten.setImageResource(R.mipmap.no_gluten);
+                viewHolder.gluten.setColorFilter(ContextCompat.getColor(context,R.color.two));
             } else if (tmpPost.getGluten().equals("Lots")) {
-                viewHolder.gluten.setImageResource(R.mipmap.gf_yellow);
+                viewHolder.gluten.setImageResource(R.mipmap.no_gluten);
+                viewHolder.gluten.setColorFilter(ContextCompat.getColor(context,R.color.three));
             } else if (tmpPost.getGluten().equals("Only")) {
-                viewHolder.gluten.setImageResource(R.mipmap.gf_green);
+                viewHolder.gluten.setImageResource(R.mipmap.no_gluten);
+                viewHolder.gluten.setColorFilter(ContextCompat.getColor(context,R.color.four));
             } else {
-                viewHolder.gluten.setImageResource(R.mipmap.gf_unknown);
+                viewHolder.gluten.setImageResource(R.mipmap.face);
+                viewHolder.gluten.setBackgroundResource(R.mipmap.no_gluten);
+                viewHolder.gluten.setAlpha(100);
+                viewHolder.gluten.setColorFilter(ContextCompat.getColor(context,R.color.five));
             }
 
         } catch (Exception e) {
 
         }
 
+//        try {
+//            if (tmpPost.getAlc().equals("Nada")) {
+//                //viewHolder.veg.setImageResource(R.drawable.vegtemp);
+//                viewHolder.alc.setImageResource(R.mipmap.alc_red);
+//            } else if (tmpPost.getAlc().equals("Soft")) {
+//                viewHolder.alc.setImageResource(R.mipmap.alc_orange);
+//            } else if (tmpPost.getAlc().equals("Hard")) {
+//                viewHolder.alc.setImageResource(R.mipmap.alc_yellow);
+//            } else if (tmpPost.getAlc().equals("Bar")) {
+//                viewHolder.alc.setImageResource(R.mipmap.alc_green);
+//            } else {
+//                viewHolder.alc.setImageResource(R.mipmap.alc_unknown);
+//            }
+//
+//        } catch (Exception e) {
+//
+//        }
+
         try {
             if (tmpPost.getAlc().equals("Nada")) {
                 //viewHolder.veg.setImageResource(R.drawable.vegtemp);
-                viewHolder.alc.setImageResource(R.mipmap.alc_red);
+                viewHolder.alc.setImageResource(R.mipmap.noalc);
+                viewHolder.alc.setColorFilter(ContextCompat.getColor(context,R.color.one));
             } else if (tmpPost.getAlc().equals("Soft")) {
-                viewHolder.alc.setImageResource(R.mipmap.alc_orange);
+                viewHolder.alc.setImageResource(R.mipmap.wine);
+                viewHolder.alc.setColorFilter(ContextCompat.getColor(context,R.color.two));
             } else if (tmpPost.getAlc().equals("Hard")) {
-                viewHolder.alc.setImageResource(R.mipmap.alc_yellow);
+                viewHolder.alc.setImageResource(R.mipmap.cock);
+                viewHolder.alc.setColorFilter(ContextCompat.getColor(context,R.color.three));
             } else if (tmpPost.getAlc().equals("Bar")) {
-                viewHolder.alc.setImageResource(R.mipmap.alc_green);
+                viewHolder.alc.setImageResource(R.mipmap.cock);
+                viewHolder.alc.setColorFilter(ContextCompat.getColor(context,R.color.four));
             } else {
-                viewHolder.alc.setImageResource(R.mipmap.alc_unknown);
+                viewHolder.alc.setImageResource(R.mipmap.wine);
+                viewHolder.alc.setColorFilter(ContextCompat.getColor(context,R.color.five));
             }
 
         } catch (Exception e) {
@@ -182,15 +218,20 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
         try {
             if (tmpPost.getWait().equals("0-10")) {
                 //viewHolder.veg.setImageResource(R.drawable.vegtemp);
-                viewHolder.wait.setImageResource(R.mipmap.wait_green);
+                viewHolder.wait.setImageResource(R.mipmap.hourglass);
+                viewHolder.wait.setColorFilter(ContextCompat.getColor(context,R.color.four));
             } else if (tmpPost.getWait().equals("10-30")) {
-                viewHolder.wait.setImageResource(R.mipmap.wait_yellow);
+                viewHolder.wait.setImageResource(R.mipmap.hourglass);
+                viewHolder.wait.setColorFilter(ContextCompat.getColor(context,R.color.three));
             } else if (tmpPost.getWait().equals("30-60")) {
-                viewHolder.wait.setImageResource(R.mipmap.wait_orange);
+                viewHolder.wait.setImageResource(R.mipmap.hourglass);
+                viewHolder.wait.setColorFilter(ContextCompat.getColor(context,R.color.two));
             } else if (tmpPost.getWait().equals("60+")) {
-                viewHolder.wait.setImageResource(R.mipmap.wait_red);
+                viewHolder.wait.setImageResource(R.mipmap.hourglass);
+                viewHolder.wait.setColorFilter(ContextCompat.getColor(context,R.color.one));
             } else {
                 viewHolder.wait.setImageResource(R.mipmap.wait_unknown);
+                viewHolder.wait.setColorFilter(ContextCompat.getColor(context,R.color.five));
             }
 
         } catch (Exception e) {
@@ -200,15 +241,20 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
         try {
             if (tmpPost.getRes().equals("no")) {
                 //viewHolder.veg.setImageResource(R.drawable.vegtemp);
-                viewHolder.res.setImageResource(R.mipmap.res_red);
+                viewHolder.res.setImageResource(R.mipmap.cal);
+                viewHolder.res.setColorFilter(ContextCompat.getColor(context,R.color.one));
             } else if (tmpPost.getRes().equals("yes")) {
-                viewHolder.res.setImageResource(R.mipmap.res_yellow);
+                viewHolder.res.setImageResource(R.mipmap.cal);
+                viewHolder.res.setColorFilter(ContextCompat.getColor(context,R.color.four));
             } else if (tmpPost.getRes().equals("I would")) {
-                viewHolder.res.setImageResource(R.mipmap.res_green);
+                viewHolder.res.setImageResource(R.mipmap.cal);
+                viewHolder.res.setColorFilter(ContextCompat.getColor(context,R.color.three));
             } else if (tmpPost.getRes().equals("Do, but hard")) {
-                viewHolder.res.setImageResource(R.mipmap.res_orange);
+                viewHolder.res.setImageResource(R.mipmap.cal);
+                viewHolder.res.setColorFilter(ContextCompat.getColor(context,R.color.two));
             } else {
-                viewHolder.res.setImageResource(R.mipmap.res_unknown);
+                viewHolder.res.setImageResource(R.mipmap.cal);
+                viewHolder.res.setColorFilter(ContextCompat.getColor(context,R.color.five));
             }
 
         } catch (Exception e) {
@@ -324,7 +370,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
         postsRef.child(postKeys.get(index)).removeValue();
         postList.remove(index);
         postKeys.remove(index);
-        //notifyItemRemoved(index);
+        notifyItemRemoved(index);
     }
 
 

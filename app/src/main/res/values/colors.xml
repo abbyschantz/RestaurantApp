@@ -15,4 +15,10 @@
     <color name="superLightGray">#E8E8E8</color>
     <color name="darkBlue">#0A3200</color>
 
+    <color name="one">#FFADAD</color>
+    <color name="two">#FFC39B</color>
+    <color name="three">#FFF689</color>
+    <color name="four">#D6FFB7</color>
+    <color name="five">#FFFFFF</color>
+
 </resources>
