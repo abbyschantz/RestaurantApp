@@ -117,10 +117,15 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.ViewHold
     }
 
     public void removeFriend(int index) {
-        friendRef.child(friendKeys.get(index)).removeValue();
-        friendList.remove(index);
-        friendKeys.remove(index);
-        notifyItemRemoved(index);
+        try {
+            friendRef.child(friendKeys.get(index)).removeValue();
+            friendList.remove(index);
+            friendKeys.remove(index);
+            notifyItemRemoved(index);
+        } catch (Exception e) {
+
+        }
+
     }
 
 

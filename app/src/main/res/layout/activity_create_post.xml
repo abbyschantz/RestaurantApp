@@ -70,6 +70,7 @@
                 <RadioButton
                     android:id="@+id/basicallyFree"
                     android:layout_width="wrap_content"
+                    android:textSize="@dimen/radio_button_txt_size"
                     android:layout_height="wrap_content"
                     android:onClick="onRadioButtonClicked"
                     android:text="@string/free" />
@@ -77,6 +78,7 @@
                 <RadioButton
                     android:id="@+id/cheap"
                     android:layout_width="wrap_content"
+                    android:textSize="@dimen/radio_button_txt_size"
                     android:layout_height="wrap_content"
                     android:onClick="onRadioButtonClicked"
                     android:text="@string/cheap" />
@@ -85,6 +87,7 @@
                     android:id="@+id/moderate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="@dimen/radio_button_txt_size"
                     android:onClick="onRadioButtonClicked"
                     android:text="@string/moderate" />
 
@@ -92,6 +95,7 @@
                     android:id="@+id/expensive"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="@dimen/radio_button_txt_size"
                     android:onClick="onRadioButtonClicked"
                     android:text="@string/expensive" />
 
@@ -99,6 +103,7 @@
                     android:id="@+id/unknownPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="@dimen/radio_button_txt_size"
                     android:onClick="onRadioButtonClicked"
                     android:text="@string/unknown" />
             </RadioGroup>
@@ -132,6 +137,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onRadioButtonClicked"
+                    android:textSize="@dimen/radio_button_txt_size"
                     android:text="@string/not_accepted" />
 
                 <RadioButton
@@ -139,12 +145,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onRadioButtonClicked"
+                    android:textSize="@dimen/radio_button_txt_size"
                     android:text="@string/accepted" />
 
                 <RadioButton
                     android:id="@+id/recommended"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="@dimen/radio_button_txt_size"
                     android:onClick="onRadioButtonClicked"
                     android:text="@string/recommended" />
 
@@ -153,6 +161,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onRadioButtonClicked"
+                    android:textSize="@dimen/radio_button_txt_size"
                     android:text="@string/hard_to_get" />
 
                 <RadioButton
@@ -160,6 +169,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onRadioButtonClicked"
+                    android:textSize="@dimen/radio_button_txt_size"
                     android:text="@string/unknown" />
             </RadioGroup>
 
@@ -182,47 +192,59 @@
                 android:layout_height="2dp"
                 android:background="@color/radioUnderline"></View>
 
-            <RadioGroup
-                android:id="@+id/waittime"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-                <RadioButton
-                    android:id="@+id/no_wait"
-                    android:layout_width="wrap_content"
+                <RadioGroup
+                    android:id="@+id/waittime"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked"
-                    android:text="@string/no_wait" />
+                    android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/short_wait"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked"
-                    android:text="@string/short_wait" />
+                    <RadioButton
+                        android:id="@+id/no_wait"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onRadioButtonClicked"
+                        android:textSize="@dimen/radio_button_txt_size"
+                        android:text="@string/no_wait" />
 
-                <RadioButton
-                    android:id="@+id/long_wait"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked"
-                    android:text="@string/long_wait" />
+                    <RadioButton
+                        android:id="@+id/short_wait"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onRadioButtonClicked"
+                        android:textSize="@dimen/radio_button_txt_size"
+                        android:text="@string/short_wait" />
 
-                <RadioButton
-                    android:id="@+id/forever_wait"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked"
-                    android:text="@string/forever" />
+                    <RadioButton
+                        android:id="@+id/long_wait"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onRadioButtonClicked"
+                        android:textSize="@dimen/radio_button_txt_size"
+                        android:text="@string/long_wait" />
 
-                <RadioButton
-                    android:id="@+id/unknownWait"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked"
-                    android:text="@string/unknown" />
-            </RadioGroup>
+                    <RadioButton
+                        android:id="@+id/forever_wait"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onRadioButtonClicked"
+                        android:textSize="@dimen/radio_button_txt_size"
+                        android:text="@string/forever" />
+
+                    <RadioButton
+                        android:id="@+id/unknownWait"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onRadioButtonClicked"
+                        android:textSize="@dimen/radio_button_txt_size"
+                        android:text="@string/unknown" />
+                </RadioGroup>
+
+            </ScrollView>
+
 
         </LinearLayout>
 
@@ -254,6 +276,7 @@
                     android:id="@+id/veg_none"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="@dimen/radio_button_txt_size"
                     android:onClick="onRadioButtonClicked"
                     android:text="@string/no_options" />
 
@@ -261,6 +284,7 @@
                     android:id="@+id/veg_few"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="@dimen/radio_button_txt_size"
                     android:onClick="onRadioButtonClicked"
                     android:text="@string/few_options" />
 
@@ -268,12 +292,14 @@
                     android:id="@+id/veg_lots"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="@dimen/radio_button_txt_size"
                     android:onClick="onRadioButtonClicked"
                     android:text="@string/lots_options" />
 
                 <RadioButton
                     android:id="@+id/veg_only"
                     android:layout_width="wrap_content"
+                    android:textSize="@dimen/radio_button_txt_size"
                     android:layout_height="wrap_content"
                     android:onClick="onRadioButtonClicked"
                     android:text="@string/only_options" />
@@ -282,6 +308,7 @@
                     android:id="@+id/unknownVeg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="@dimen/radio_button_txt_size"
                     android:onClick="onRadioButtonClicked"
                     android:text="@string/unknown" />
             </RadioGroup>
@@ -315,6 +342,7 @@
                     android:id="@+id/gluten_none"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="@dimen/radio_button_txt_size"
                     android:onClick="onRadioButtonClicked"
                     android:text="@string/no_options" />
 
@@ -322,6 +350,7 @@
                     android:id="@+id/gluten_few"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="@dimen/radio_button_txt_size"
                     android:onClick="onRadioButtonClicked"
                     android:text="@string/few_options" />
 
@@ -329,6 +358,7 @@
                     android:id="@+id/gluten_lots"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="@dimen/radio_button_txt_size"
                     android:onClick="onRadioButtonClicked"
                     android:text="@string/lots_options" />
 
@@ -337,12 +367,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onRadioButtonClicked"
+                    android:textSize="@dimen/radio_button_txt_size"
                     android:text="@string/only_options" />
 
                 <RadioButton
                     android:id="@+id/unknownGluten"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="@dimen/radio_button_txt_size"
                     android:onClick="onRadioButtonClicked"
                     android:text="@string/unknown" />
             </RadioGroup>
@@ -376,6 +408,7 @@
                     android:id="@+id/no_alcohol"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="@dimen/radio_button_txt_size"
                     android:onClick="onRadioButtonClicked"
                     android:text="@string/no_alcohol" />
 
@@ -383,12 +416,14 @@
                     android:id="@+id/soft_alcohol"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="@dimen/radio_button_txt_size"
                     android:onClick="onRadioButtonClicked"
                     android:text="@string/soft_alcohol" />
 
                 <RadioButton
                     android:id="@+id/hard_alcohol"
                     android:layout_width="wrap_content"
+                    android:textSize="@dimen/radio_button_txt_size"
                     android:layout_height="wrap_content"
                     android:onClick="onRadioButtonClicked"
                     android:text="@string/hard_alcohol" />
@@ -397,12 +432,14 @@
                     android:id="@+id/all_alcohol"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="@dimen/radio_button_txt_size"
                     android:onClick="onRadioButtonClicked"
                     android:text="@string/all_alcohol" />
 
                 <RadioButton
                     android:id="@+id/unknownAlcohol"
                     android:layout_width="wrap_content"
+                    android:textSize="@dimen/radio_button_txt_size"
                     android:layout_height="wrap_content"
                     android:onClick="onRadioButtonClicked"
                     android:text="@string/unknown" />

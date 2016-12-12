@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RestaurantApp</string>
+    <string name="app_name">Get Rec\'d</string>
 
     <string name="app_n_name">Get Rec\'d</string>
 
@@ -42,8 +42,8 @@
 
     <string name="not_accepted">no</string>
     <string name="accepted">yes</string>
-    <string name="recommended">I would</string>
-    <string name="hard_to_get">Do, but hard</string>
+    <string name="recommended">get</string>
+    <string name="hard_to_get">hard to get</string>
     <string name="unknown">N/A</string>
 
     <string name="no_wait">0-10</string>
