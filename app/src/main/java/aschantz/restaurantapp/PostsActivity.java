@@ -71,11 +71,9 @@ public class PostsActivity extends BaseActivity implements NavigationView.OnNavi
 
         initPostListener();
 
-//        friendsAdapter = new FriendsAdapter(getApplicationContext(), getUid());
-//        Friend youFriend = new Friend(getUid(), getUserName());
-//        friendsAdapter.addFriend(youFriend, getUid());
 
-        //checkFriends();
+
+
     }
 
     private void initPostListener() {
@@ -136,20 +134,7 @@ public class PostsActivity extends BaseActivity implements NavigationView.OnNavi
         return true;
     }
 
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        int id = item.getItemId();
-//
-//        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_settings) {
-//            return true;
-//        }
-//
-//        return super.onOptionsItemSelected(item);
-//    }
+
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -186,7 +171,7 @@ public class PostsActivity extends BaseActivity implements NavigationView.OnNavi
             final DataSnapshot dataSnapshotIN = dataSnapshot;
             final Post newPostIN = newPost;
 
-            //DatabaseReference usersRef = ref.child("users").child("friends");
+
 
             ValueEventListener usersEventListener = ref.child("friends").addValueEventListener(new ValueEventListener() {
                 @Override
@@ -196,7 +181,7 @@ public class PostsActivity extends BaseActivity implements NavigationView.OnNavi
 
                     try {
                         if (snapshot.getValue().toString().contains("{email=" + postAuthor + ", uid=" + getUid())) {
-                            //postsAdapter.addPost(newPost, dataSnapshot.getKey());
+
                             postsAdapter.addPost(newPostIN, dataSnapshotIN.getKey());
                         }
                     } catch (Exception e) {

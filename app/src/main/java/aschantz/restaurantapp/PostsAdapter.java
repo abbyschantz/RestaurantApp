@@ -90,9 +90,9 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
         this.postKeys = new ArrayList<String>();
 
         //dummy item
-        postList.add(new Post("1", "defaultAuthor", "defaultPlace",
-                "defaultTitle", "defaultBody", "defaultRating", "defaultGrating", "defaultPrice", "defaultDishes",
-                "defaultRes", "defaultVeg", "defaultGluten", "defaultWait", "defaultAlc"));
+//        postList.add(new Post("1", "defaultAuthor", "defaultPlace",
+//                "defaultTitle", "defaultBody", "defaultRating", "defaultGrating", "defaultPrice", "defaultDishes",
+//                "defaultRes", "defaultVeg", "defaultGluten", "defaultWait", "defaultAlc"));
 
         postsRef = FirebaseDatabase.getInstance().getReference("posts");
 

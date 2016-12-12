@@ -80,7 +80,7 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.ViewHold
     public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
         Friend tmpFriend = friendList.get(position);
 
-        //viewHolder.tvUserId.setText(tmpFriend.getUserId());
+
         try {
             viewHolder.tvEmail.setText(tmpFriend.getEmail());
         } catch (Exception e) {
