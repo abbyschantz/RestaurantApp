@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements PlaceSelectionLis
         locationTextView.setText(getString(R.string.place_data, place.getName(),
                 place.getAddress(), place.getPhoneNumber(), place.getWebsiteUri(),
                 place.getRating()));
-        if (!TextUtils.isEmpty(place.getAttributions())){
+        if (!TextUtils.isEmpty(place.getAttributions())) {
             attributionsTextView.setText(Html.fromHtml(place.getAttributions().toString()));
         }
 

@@ -25,7 +25,7 @@ import aschantz.restaurantapp.model.Friend;
 /**
  * Created by aschantz on 12/10/16.
  */
-public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.ViewHolder>{
+public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView tvUserId;
@@ -64,7 +64,6 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.ViewHold
         friendRef = FirebaseDatabase.getInstance().getReference("friends");
 
 
-
     }
 
     @Override
@@ -84,7 +83,7 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.ViewHold
         //viewHolder.tvUserId.setText(tmpFriend.getUserId());
         try {
             viewHolder.tvEmail.setText(tmpFriend.getEmail());
-        }catch (Exception e) {
+        } catch (Exception e) {
 
         }
 
@@ -127,7 +126,6 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.ViewHold
         }
 
     }
-
 
 
     public void removeFriendByKey(String key) {

@@ -76,12 +76,6 @@ public class CreatePostActivity extends BaseActivity implements PlaceSelectionLi
         userRatingBar = (RatingBar) findViewById(R.id.userRatingBar);
         userRating = Float.toString(userRatingBar.getRating());
 
-//        spinnerItemType = (Spinner) findViewById(R.id.resAccepted);
-//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-//                R.array.resAccepted_array, android.R.layout.simple_spinner_item);
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spinnerItemType.setAdapter(adapter);
-//        resAcceptedString = spinnerItemType.getSelectedItem().toString();
 
         // PLACES AUTOCOMPLETE FRAGMENT
         PlaceAutocompleteFragment autocompleteFragment = (PlaceAutocompleteFragment)
@@ -93,7 +87,7 @@ public class CreatePostActivity extends BaseActivity implements PlaceSelectionLi
 
     @OnClick(R.id.btnSend)
     void sendClick() {
-        if(!isFormValid()) {
+        if (!isFormValid()) {
             return;
         }
 
@@ -114,24 +108,7 @@ public class CreatePostActivity extends BaseActivity implements PlaceSelectionLi
 
     private boolean isFormValid() {
         boolean result = true;
-//        if(TextUtils.isEmpty(placeName.toString())) {
-//            placeName.toString().setError("Required");
-//            result = false;
-//        } else {
-//        }
-//        if (TextUtils.isEmpty(etEthnicity.getText().toString())) {
-//            etEthnicity.setError("Required");
-//            result = false;
-//        } else {
-//            etEthnicity.setError(null);
-//        }
-//
-//        if (TextUtils.isEmpty(etBody.getText().toString())) {
-//            etBody.setError("Required");
-//            result = false;
-//        } else {
-//            etBody.setError(null);
-//        }
+
 
         return result;
     }
@@ -144,7 +121,7 @@ public class CreatePostActivity extends BaseActivity implements PlaceSelectionLi
                 place.getRating()));
         placeName = getString(R.string.place_name, place.getName());
         googleRating = getString(R.string.place_rating, place.getRating());
-        if (!TextUtils.isEmpty(place.getAttributions())){
+        if (!TextUtils.isEmpty(place.getAttributions())) {
             attributionsTextView.setText(Html.fromHtml(place.getAttributions().toString()));
         }
     }
@@ -161,30 +138,31 @@ public class CreatePostActivity extends BaseActivity implements PlaceSelectionLi
         boolean checked = ((RadioButton) view).isChecked();
 
         // Check which radio button was clicked
-        switch(view.getId()) {
+        switch (view.getId()) {
             //PRICE
             case R.id.basicallyFree:
                 if (checked)
                     priceRange = getResources().getString(R.string.basically_free);
-                    break;
+                break;
             case R.id.cheap:
                 if (checked)
                     priceRange = getResources().getString(R.string.affordable);
-                    break;
+                break;
             case R.id.moderate:
                 if (checked)
                     priceRange = getResources().getString(R.string.techy);
-                    break;
+                break;
             case R.id.expensive:
                 if (checked)
                     priceRange = getResources().getString(R.string.paycheck);
-                    break;
+                break;
             case R.id.unknownPrice:
                 if (checked)
                     priceRange = getResources().getString(R.string.unknown);
                 break;
             //RESERVATIONS
-        } switch (view.getId()) {
+        }
+        switch (view.getId()) {
             case R.id.notAccepted:
                 if (checked)
                     res = getResources().getString(R.string.not_accepted);
@@ -206,7 +184,8 @@ public class CreatePostActivity extends BaseActivity implements PlaceSelectionLi
                     res = getResources().getString(R.string.unknown);
                 break;
             //VEGETARIAN OPTIONS
-        } switch (view.getId()) {
+        }
+        switch (view.getId()) {
             case R.id.veg_none:
                 if (checked)
                     veg = getResources().getString(R.string.no_options);
@@ -228,7 +207,8 @@ public class CreatePostActivity extends BaseActivity implements PlaceSelectionLi
                     veg = getResources().getString(R.string.unknown);
                 break;
             //GLUTEN
-        } switch (view.getId()) {
+        }
+        switch (view.getId()) {
             case R.id.gluten_none:
                 if (checked)
                     gluten = getResources().getString(R.string.no_options);
@@ -250,7 +230,8 @@ public class CreatePostActivity extends BaseActivity implements PlaceSelectionLi
                     gluten = getResources().getString(R.string.unknown);
                 break;
             //wait time
-        } switch (view.getId()) {
+        }
+        switch (view.getId()) {
             case R.id.no_wait:
                 if (checked)
                     wait = getResources().getString(R.string.no_wait);
@@ -272,7 +253,8 @@ public class CreatePostActivity extends BaseActivity implements PlaceSelectionLi
                     wait = getResources().getString(R.string.unknown);
                 break;
             //alc
-        } switch (view.getId()) {
+        }
+        switch (view.getId()) {
             case R.id.no_alcohol:
                 if (checked)
                     alc = getResources().getString(R.string.no_alcohol);
@@ -297,7 +279,6 @@ public class CreatePostActivity extends BaseActivity implements PlaceSelectionLi
 
 
     }
-
 
 
 }

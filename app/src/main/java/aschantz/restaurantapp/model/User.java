@@ -14,9 +14,10 @@ public class User {
     private String userName;
     private List friendList;
 
-    public User() {}
+    public User() {
+    }
 
-    public User(String email, String userName, List friendList ) {
+    public User(String email, String userName, List friendList) {
         this.email = email;
         this.userName = userName;
         this.friendList = friendList;

@@ -18,6 +18,6 @@ public class ForumMessagingService extends FirebaseMessagingService {
         }
         String body = remoteMessage.getNotification().getBody();
 
-        Log.d("FIREBASE_AITForum_PUSH", from+"\n"+payload+"\n"+body);
+        Log.d("FIREBASE_AITForum_PUSH", from + "\n" + payload + "\n" + body);
     }
 }

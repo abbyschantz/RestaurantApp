@@ -84,24 +84,17 @@ public class PostsActivity extends BaseActivity implements NavigationView.OnNavi
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 DataSnapshot dataSnapshotWithin = dataSnapshot;
-                final Post newPost = dataSnapshot.getValue(Post.class);
+                Post newPost = dataSnapshot.getValue(Post.class);
                 final String postUid = newPost.getUid();
                 final String postAuthor = newPost.getAuthor();
-                System.out.println("friends snapshot value"+friendsSnapshotValue);
+                System.out.println("friends snapshot value" + friendsSnapshotValue);
                 if (getUid().equals(postUid)) {
                     postsAdapter.addPost(newPost, dataSnapshot.getKey());
                     System.out.println(dataSnapshot.getValue().toString());
 
                 } else {
                     checkFriends(postAuthor, dataSnapshotWithin, newPost);
-                    //if(friendsSnapshotValue.contains("{email=" + postAuthor + ", uid=" + getUid())) {
-                        //System.out.println("FRIENDSSNAPSHOTVALUEIN");
-
-
                 }
-
-//
-                //postsAdapter.addPost(newPost, dataSnapshot.getKey());
             }
 
             @Override
@@ -111,7 +104,6 @@ public class PostsActivity extends BaseActivity implements NavigationView.OnNavi
 
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
-                //remove post from adapter
 
             }
 

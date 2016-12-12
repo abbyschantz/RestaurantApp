@@ -34,7 +34,7 @@ import aschantz.restaurantapp.model.Post;
 /**
  * Created by aschantz on 12/2/16.
  */
-public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
+public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> {
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public CardView card_view;
         public TextView tvUserId;
@@ -92,7 +92,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
         //dummy item
         postList.add(new Post("1", "defaultAuthor", "defaultPlace",
                 "defaultTitle", "defaultBody", "defaultRating", "defaultGrating", "defaultPrice", "defaultDishes",
-                "defaultRes", "defaultVeg", "defaultGluten", "defaultWait",  "defaultAlc"));
+                "defaultRes", "defaultVeg", "defaultGluten", "defaultWait", "defaultAlc"));
 
         postsRef = FirebaseDatabase.getInstance().getReference("posts");
 
@@ -119,32 +119,28 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
         viewHolder.tvTitle.setText(tmpPost.getTitle());
         viewHolder.tvBody.setText(tmpPost.getBody());
         viewHolder.priceRange.setText(tmpPost.getPriceRange());
-        //viewHolder.res.setText(tmpPost.getRes());
-        //viewHolder.gluten.setText(tmpPost.getGluten());
-        //viewHolder.wait.setText(tmpPost.getWait());
-        //viewHolder.alc.setText(tmpPost.getAlc());
-//        viewHolder.veg.setText(tmpPost.getVeg());
+
 
 
         try {
             if (tmpPost.getVeg().equals("None")) {
                 //viewHolder.veg.setImageResource(R.drawable.vegtemp);
                 viewHolder.veg.setImageResource(R.mipmap.veg);
-                viewHolder.veg.setColorFilter(ContextCompat.getColor(context,R.color.one));
+                viewHolder.veg.setColorFilter(ContextCompat.getColor(context, R.color.one));
             } else if (tmpPost.getVeg().equals("A Few")) {
                 viewHolder.veg.setImageResource(R.mipmap.veg);
-                viewHolder.veg.setColorFilter(ContextCompat.getColor(context,R.color.two));
+                viewHolder.veg.setColorFilter(ContextCompat.getColor(context, R.color.two));
             } else if (tmpPost.getVeg().equals("Lots")) {
                 viewHolder.veg.setImageResource(R.mipmap.veg);
-                viewHolder.veg.setColorFilter(ContextCompat.getColor(context,R.color.three));
+                viewHolder.veg.setColorFilter(ContextCompat.getColor(context, R.color.three));
             } else if (tmpPost.getVeg().equals("Only")) {
                 viewHolder.veg.setImageResource(R.mipmap.veg);
-                viewHolder.veg.setColorFilter(ContextCompat.getColor(context,R.color.four));
+                viewHolder.veg.setColorFilter(ContextCompat.getColor(context, R.color.four));
             } else {
                 viewHolder.veg.setImageResource(R.mipmap.face);
                 viewHolder.veg.setBackgroundResource(R.mipmap.gv);
                 viewHolder.veg.setAlpha(100);
-                viewHolder.veg.setColorFilter(ContextCompat.getColor(context,R.color.lightTeal));
+                viewHolder.veg.setColorFilter(ContextCompat.getColor(context, R.color.lightTeal));
             }
 
         } catch (Exception e) {
@@ -155,64 +151,48 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
             if (tmpPost.getGluten().equals("None")) {
                 //viewHolder.veg.setImageResource(R.drawable.vegtemp);
                 viewHolder.gluten.setImageResource(R.mipmap.no_gluten);
-                viewHolder.gluten.setColorFilter(ContextCompat.getColor(context,R.color.one));
+                viewHolder.gluten.setColorFilter(ContextCompat.getColor(context, R.color.one));
             } else if (tmpPost.getGluten().equals("A Few")) {
                 viewHolder.gluten.setImageResource(R.mipmap.no_gluten);
-                viewHolder.gluten.setColorFilter(ContextCompat.getColor(context,R.color.two));
+                viewHolder.gluten.setColorFilter(ContextCompat.getColor(context, R.color.two));
             } else if (tmpPost.getGluten().equals("Lots")) {
                 viewHolder.gluten.setImageResource(R.mipmap.no_gluten);
-                viewHolder.gluten.setColorFilter(ContextCompat.getColor(context,R.color.three));
+                viewHolder.gluten.setColorFilter(ContextCompat.getColor(context, R.color.three));
             } else if (tmpPost.getGluten().equals("Only")) {
                 viewHolder.gluten.setImageResource(R.mipmap.no_gluten);
-                viewHolder.gluten.setColorFilter(ContextCompat.getColor(context,R.color.four));
+                viewHolder.gluten.setColorFilter(ContextCompat.getColor(context, R.color.four));
             } else {
                 viewHolder.gluten.setImageResource(R.mipmap.face);
                 viewHolder.gluten.setBackgroundResource(R.mipmap.gg);
                 viewHolder.gluten.setAlpha(100);
-                viewHolder.gluten.setColorFilter(ContextCompat.getColor(context,R.color.lightTeal));
+                viewHolder.gluten.setColorFilter(ContextCompat.getColor(context, R.color.lightTeal));
             }
 
         } catch (Exception e) {
 
         }
 
-//        try {
-//            if (tmpPost.getAlc().equals("Nada")) {
-//                //viewHolder.veg.setImageResource(R.drawable.vegtemp);
-//                viewHolder.alc.setImageResource(R.mipmap.alc_red);
-//            } else if (tmpPost.getAlc().equals("Soft")) {
-//                viewHolder.alc.setImageResource(R.mipmap.alc_orange);
-//            } else if (tmpPost.getAlc().equals("Hard")) {
-//                viewHolder.alc.setImageResource(R.mipmap.alc_yellow);
-//            } else if (tmpPost.getAlc().equals("Bar")) {
-//                viewHolder.alc.setImageResource(R.mipmap.alc_green);
-//            } else {
-//                viewHolder.alc.setImageResource(R.mipmap.alc_unknown);
-//            }
-//
-//        } catch (Exception e) {
-//
-//        }
+
 
         try {
             if (tmpPost.getAlc().equals("Nada")) {
                 //viewHolder.veg.setImageResource(R.drawable.vegtemp);
                 viewHolder.alc.setImageResource(R.mipmap.noalc);
-                viewHolder.alc.setColorFilter(ContextCompat.getColor(context,R.color.one));
+                viewHolder.alc.setColorFilter(ContextCompat.getColor(context, R.color.one));
             } else if (tmpPost.getAlc().equals("Soft")) {
                 viewHolder.alc.setImageResource(R.mipmap.wine);
-                viewHolder.alc.setColorFilter(ContextCompat.getColor(context,R.color.two));
+                viewHolder.alc.setColorFilter(ContextCompat.getColor(context, R.color.two));
             } else if (tmpPost.getAlc().equals("Hard")) {
                 viewHolder.alc.setImageResource(R.mipmap.cock);
-                viewHolder.alc.setColorFilter(ContextCompat.getColor(context,R.color.three));
+                viewHolder.alc.setColorFilter(ContextCompat.getColor(context, R.color.three));
             } else if (tmpPost.getAlc().equals("Bar")) {
                 viewHolder.alc.setImageResource(R.mipmap.cock);
-                viewHolder.alc.setColorFilter(ContextCompat.getColor(context,R.color.four));
+                viewHolder.alc.setColorFilter(ContextCompat.getColor(context, R.color.four));
             } else {
                 viewHolder.alc.setImageResource(R.mipmap.face);
                 viewHolder.alc.setBackgroundResource(R.mipmap.mcock);
                 viewHolder.alc.setAlpha(127);
-                viewHolder.alc.setColorFilter(ContextCompat.getColor(context,R.color.lightTeal));
+                viewHolder.alc.setColorFilter(ContextCompat.getColor(context, R.color.lightTeal));
             }
 
         } catch (Exception e) {
@@ -223,21 +203,21 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
             if (tmpPost.getWait().equals("0-10")) {
                 //viewHolder.veg.setImageResource(R.drawable.vegtemp);
                 viewHolder.wait.setImageResource(R.mipmap.hourglass);
-                viewHolder.wait.setColorFilter(ContextCompat.getColor(context,R.color.four));
+                viewHolder.wait.setColorFilter(ContextCompat.getColor(context, R.color.four));
             } else if (tmpPost.getWait().equals("10-30")) {
                 viewHolder.wait.setImageResource(R.mipmap.hourglass);
-                viewHolder.wait.setColorFilter(ContextCompat.getColor(context,R.color.three));
+                viewHolder.wait.setColorFilter(ContextCompat.getColor(context, R.color.three));
             } else if (tmpPost.getWait().equals("30-60")) {
                 viewHolder.wait.setImageResource(R.mipmap.hourglass);
-                viewHolder.wait.setColorFilter(ContextCompat.getColor(context,R.color.two));
+                viewHolder.wait.setColorFilter(ContextCompat.getColor(context, R.color.two));
             } else if (tmpPost.getWait().equals("60+")) {
                 viewHolder.wait.setImageResource(R.mipmap.hourglass);
-                viewHolder.wait.setColorFilter(ContextCompat.getColor(context,R.color.one));
+                viewHolder.wait.setColorFilter(ContextCompat.getColor(context, R.color.one));
             } else {
                 viewHolder.wait.setImageResource(R.mipmap.face);
                 viewHolder.wait.setBackgroundResource(R.mipmap.ghour);
                 viewHolder.wait.setAlpha(100);
-                viewHolder.wait.setColorFilter(ContextCompat.getColor(context,R.color.lightTeal));
+                viewHolder.wait.setColorFilter(ContextCompat.getColor(context, R.color.lightTeal));
             }
 
         } catch (Exception e) {
@@ -248,21 +228,21 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
             if (tmpPost.getRes().equals("no")) {
                 //viewHolder.veg.setImageResource(R.drawable.vegtemp);
                 viewHolder.res.setImageResource(R.mipmap.cal);
-                viewHolder.res.setColorFilter(ContextCompat.getColor(context,R.color.one));
+                viewHolder.res.setColorFilter(ContextCompat.getColor(context, R.color.one));
             } else if (tmpPost.getRes().equals("yes")) {
                 viewHolder.res.setImageResource(R.mipmap.cal);
-                viewHolder.res.setColorFilter(ContextCompat.getColor(context,R.color.four));
+                viewHolder.res.setColorFilter(ContextCompat.getColor(context, R.color.four));
             } else if (tmpPost.getRes().equals("I would")) {
                 viewHolder.res.setImageResource(R.mipmap.cal);
-                viewHolder.res.setColorFilter(ContextCompat.getColor(context,R.color.three));
+                viewHolder.res.setColorFilter(ContextCompat.getColor(context, R.color.three));
             } else if (tmpPost.getRes().equals("Do, but hard")) {
                 viewHolder.res.setImageResource(R.mipmap.cal);
-                viewHolder.res.setColorFilter(ContextCompat.getColor(context,R.color.two));
+                viewHolder.res.setColorFilter(ContextCompat.getColor(context, R.color.two));
             } else {
                 viewHolder.res.setImageResource(R.mipmap.face);
                 viewHolder.res.setBackgroundResource(R.mipmap.gcal);
                 viewHolder.res.setAlpha(100);
-                viewHolder.res.setColorFilter(ContextCompat.getColor(context,R.color.lightTeal));
+                viewHolder.res.setColorFilter(ContextCompat.getColor(context, R.color.lightTeal));
             }
 
         } catch (Exception e) {
@@ -295,76 +275,18 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
             viewHolder.btnDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    try {
-                        removePost(position);
-                    } catch (Exception e){
-
-                    }
-
+                    removePost(position);
                 }
             });
 
         }
-//        if (uId.equals(tmpPost.getUid())) {
-//            postList.remove(position);
-//            postKeys.remove(position);
-//            notifyItemRemoved(position);
-//        }
+
 
         setAnimation(viewHolder.itemView, position);
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//        try {
-//            final FirebaseDatabase database = FirebaseDatabase.getInstance();
-//            DatabaseReference ref = database.getReferenceFromUrl("https://restaurantsapp-9a203.firebaseio.com/");
-//
-//
-//            //DatabaseReference usersRef = ref.child("users").child("friends");
-//
-//            ValueEventListener usersEventListener = ref.child("friends").addValueEventListener(new ValueEventListener() {
-//                @Override
-//                public void onDataChange(DataSnapshot snapshot) {
-//                    //friendObject = snapshot.getValue();
-//
-//
-//                    //for (int i = 0; i < friendObject.toString().length(); i++ ){
-//                    //System.out.println(friendObject.toString().charAt(i));
-//
-//                    //}
-//                    String author = viewHolder.tvAuthor.getText().toString();
-//                    String userId = viewHolder.tvUserId.getText().toString();
-//
-//                    System.out.println(snapshot.getValue());  //prints "Do you have data? You'll love Firebase."
-//                    System.out.println(uId);
-//                    System.out.println("USER ID"+userId);
-//                    System.out.println("uId"+uId);
-//                    try {
-//                        if (!snapshot.getValue().toString().contains("{email=" + author + ", uid=" + uId)) {
-//                            if(userId.equals(uId)) {
-//                                System.out.println("INSIDE SECOND IF");
-//                                //viewHolder.card_view.setVisibility(View.VISIBLE);
-//                                //System.out.println(viewHolder.tvAuthor.getText());
-//                            } else {
-//                                //viewHolder.card_view.setVisibility(View.GONE);
-//                                removePost(position);
-//                            }
-//                            //System.out.println("HAPPYHAPPYJOYJOY");
-//                            //viewHolder.card_view.setVisibility(View.GONE);
-//                        }
-//                    } catch (Exception e) {
-//
-//                    }
-//                }
-//
-//                @Override
-//                public void onCancelled(DatabaseError databaseError) {
-//
-//                }
-//            });
-//        } catch (Exception e) {
-//
-//        }
 
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 
     }
 
@@ -385,7 +307,6 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
         postKeys.remove(index);
         notifyItemRemoved(index);
     }
-
 
 
     public void removePostByKey(String key) {

@@ -131,8 +131,8 @@
                             android:layout_height="wrap_content"
                             android:text="@string/user_rating"
                             android:textAllCaps="false"
-                            android:textSize="10dp"
-                            android:textColor="@color/superLightGray" />
+                            android:textColor="@color/superLightGray"
+                            android:textSize="10dp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -157,8 +157,8 @@
                             android:layout_height="wrap_content"
                             android:text="@string/google_rating"
                             android:textAllCaps="false"
-                            android:textSize="10dp"
-                            android:textColor="@color/superLightGray" />
+                            android:textColor="@color/superLightGray"
+                            android:textSize="10dp" />
                     </LinearLayout>
 
                     <!--
@@ -362,13 +362,7 @@
                         android:textSize="26dp"
                         android:textStyle="bold" />
 
-                    <!--<View
-                        android:layout_width="match_parent"
-                        android:background="@color/mediumGray"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:layout_alignParentTop="true"
-                        android:layout_height="2dp" /> -->
+
                 </RelativeLayout>
 
             </LinearLayout>

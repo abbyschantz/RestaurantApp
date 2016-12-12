@@ -48,7 +48,6 @@ import butterknife.OnClick;
 public class AddFriendActivity extends BaseActivity {
 
 
-    //Map<String, User> users = new HashMap<String, User>();
     Map<String, Friend> friends = new HashMap<>();
 
     DatabaseReference databaseReference;
@@ -59,11 +58,8 @@ public class AddFriendActivity extends BaseActivity {
     private String userId;
 
 
-
     @BindView(R.id.etEmail)
     EditText etEmail;
-
-
 
 
     @Override
@@ -73,25 +69,17 @@ public class AddFriendActivity extends BaseActivity {
 
         ButterKnife.bind(this);
 
-        //etEmail = (EditText) findViewById(R.id.etEmail);
-
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
         firebaseAuth = FirebaseAuth.getInstance();
 
         userId = getUid();
 
-
-
-
-        //printMap(users);
-
-
     }
 
     @OnClick(R.id.btnAddFriend)
     void registerClick() {
-        if(!isFormValid()) {
+        if (!isFormValid()) {
             return;
         }
 
@@ -99,7 +87,7 @@ public class AddFriendActivity extends BaseActivity {
         //get reference to the firebase database, then say we want to work with the post child
         //want to create new method under the posts
         String key = FirebaseDatabase.getInstance().getReference().child("friends").push().getKey();
-        Friend newFriend = new Friend(getUid(),etEmail.getText().toString());
+        Friend newFriend = new Friend(getUid(), etEmail.getText().toString());
 
         //makes branch in database for post, then the key, then the post data
         FirebaseDatabase.getInstance().getReference().child("friends").child(key).setValue(newFriend);
@@ -108,41 +96,6 @@ public class AddFriendActivity extends BaseActivity {
 
 
         finish();
-
-        //get reference to the firebase database, then say we want to work with the post child
-        //want to create new method under the posts
-        //String key = FirebaseDatabase.getInstance().getReference().child("users").push().getKey();
-
-
-//        User addFriendUser = new User(etEmail.getText().toString());
-//        String emailString = etEmail.getText().toString();
-//        addFriend(emailString);
-
-////////////////////////
-//        final FirebaseDatabase database = FirebaseDatabase.getInstance();
-//        DatabaseReference ref = database.getReferenceFromUrl("https://restaurantsapp-9a203.firebaseio.com/");
-//
-//
-//        DatabaseReference usersRef = ref.child("users").child("friends");
-//
-//        Map<String, User> users = new HashMap<String, User>();
-//        users.put("sabby", new User("abby.s"));
-//        users.put("ggenna", new User("genna.g"));
-//
-//        usersRef.push().setValue(users);
-
-
-        //////////////////// \\ ////////////////////////////////////////////////////////////////////////////////
-
-
-        //makes branch in database for post, then the key, then the post data
-        //FirebaseDatabase.getInstance().getReference().child("users").child(key).setValue(addFriend);
-        //FirebaseDatabase.getInstance().getReference().child("users").child(getUid()).child("friends").push(addFriend);
-
-
-//        Toast.makeText(this, "Friend added", Toast.LENGTH_SHORT).show();
-//
-//        finish();
 
 
     }
@@ -167,7 +120,7 @@ public class AddFriendActivity extends BaseActivity {
         return true;
     }
 
-    private void addFriend (String email) {
+    private void addFriend(String email) {
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReferenceFromUrl("https://restaurantsapp-9a203.firebaseio.com/");
 
@@ -175,43 +128,10 @@ public class AddFriendActivity extends BaseActivity {
         DatabaseReference friendsRef = ref.child("friends");
 
         friends.put(email, new Friend(email));
-//        friends.put("ggenna", new User("genna.g"));
 
         friendsRef.push().setValue(friends);
 
     }
 
-
-//
-//    // Get a reference to our posts
-//    final FirebaseDatabase database = FirebaseDatabase.getInstance();
-//    DatabaseReference ref = database.getReferenceFromUrl("https://restaurantsapp-9a203.firebaseio.com/");
-//
-//    //DatabaseReference usersRef = ref.child("users").child("friends");
-//
-//    ValueEventListener usersEventListener = ref.child("friends").addValueEventListener(new ValueEventListener() {
-//        @Override
-//        public void onDataChange(DataSnapshot snapshot) {
-//            friendObject = snapshot.getValue();
-//
-//
-//
-//
-//            for (int i = 0; i < friendObject.toString().length(); i++ ){
-//                //System.out.println(friendObject.toString().charAt(i));
-//
-//            }
-//            System.out.println(snapshot.getValue());  //prints "Do you have data? You'll love Firebase."
-//            System.out.println(userId);
-//            if (snapshot.getValue().toString().contains("{email=Jeff, uid="+userId)) {
-//                System.out.println("HAPPYHAPPPYJOBJON");
-//            }
-//        }
-//
-//        @Override
-//        public void onCancelled(DatabaseError databaseError) {
-//
-//        }
-//    });
 
 }
